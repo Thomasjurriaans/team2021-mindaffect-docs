@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>team2021-mindaffect &mdash; team2021-mindaffect 0.1 documentation</title>
+  <title>tts module &mdash; team2021-mindaffect 0.1 documentation</title>
   
 
   
@@ -36,8 +36,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="example_module module" href="example_module.html" />
-    <link rel="prev" title="Welcome to team2021-mindaffect’s documentation!" href="index.html" /> 
+    <link rel="prev" title="example_module module" href="example_module.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,9 +83,9 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">team2021-mindaffect</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">team2021-mindaffect</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="example_module.html">example_module module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tts.html">tts module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">tts module</a></li>
 </ul>
 </li>
 </ul>
@@ -135,13 +134,15 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>team2021-mindaffect</li>
+          <li><a href="modules.html">team2021-mindaffect</a> &raquo;</li>
+        
+      <li>tts module</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/tts.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -154,17 +155,51 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="team2021-mindaffect">
-<h1>team2021-mindaffect<a class="headerlink" href="#team2021-mindaffect" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="example_module.html">example_module module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="example_module.html#important-the-following-file-is-used-by-the-team-to-help-with-documentation-it-is-not-relevant-for-the-project-otherwise">IMPORTANT: The following file is used by the team to help with documentation. It is not relevant for the project otherwise.</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tts.html">tts module</a></li>
-</ul>
+  <div class="section" id="module-tts">
+<span id="tts-module"></span><h1>tts module<a class="headerlink" href="#module-tts" title="Permalink to this headline">¶</a></h1>
+<p>This module is used to convert text into speech.</p>
+<p>The module contains a single class <code class="docutils literal notranslate"><span class="pre">Engine</span></code>.
+Make an instance of this class in order to use it.</p>
+<p><strong>Usage</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tts</span>
+<span class="n">tts</span> <span class="o">=</span> <span class="n">tts</span><span class="o">.</span><span class="n">engine</span><span class="p">()</span>
+<span class="n">tts</span><span class="o">.</span><span class="n">speak</span><span class="p">(</span><span class="s2">&quot;Test message&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
+<p>If there is a connection to the internet, Google’s <code class="docutils literal notranslate"><span class="pre">gTTS</span></code> will be used.
+If there is none, a local TTS service will be used by <code class="docutils literal notranslate"><span class="pre">pyttsx3</span></code>.</p>
+<dl class="py class">
+<dt id="tts.Engine">
+<em class="property">class </em><code class="sig-prename descclassname">tts.</code><code class="sig-name descname">Engine</code><a class="headerlink" href="#tts.Engine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Uses an online TTS service if available, local TTS otherwise.</p>
+<dl class="py method">
+<dt id="tts.Engine.online">
+<code class="sig-name descname">online</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tts.Engine.online" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if there is an internet connection available with sufficiently low ping</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if successful, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tts.Engine.speak">
+<code class="sig-name descname">speak</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tts.Engine.speak" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decides on which TTS service to use, which language to speak, and plays the audio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>str</em>) – The message.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -175,10 +210,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="example_module.html" class="btn btn-neutral float-right" title="example_module module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to team2021-mindaffect’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="example_module.html" class="btn btn-neutral float-left" title="example_module module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -1,0 +1,7 @@
+team2021-mindaffect
+===================
+
+.. toctree::
+   :maxdepth: 4
+
+   example_module

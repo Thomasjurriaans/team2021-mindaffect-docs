@@ -1,1 +1,0 @@
-# team2021-mindaffect-docs

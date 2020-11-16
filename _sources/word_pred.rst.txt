@@ -1,0 +1,7 @@
+word_pred module
+==================
+
+.. automodule:: word_pred
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -36,6 +36,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="word_pred module" href="word_pred.html" />
     <link rel="prev" title="example_module module" href="example_module.html" /> 
 </head>
 
@@ -83,9 +84,10 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">team2021-mindaffect</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">keyboard</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="example_module.html">example_module module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">tts module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="word_pred.html">word_pred module</a></li>
 </ul>
 </li>
 </ul>
@@ -134,7 +136,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="modules.html">team2021-mindaffect</a> &raquo;</li>
+          <li><a href="modules.html">keyboard</a> &raquo;</li>
         
       <li>tts module</li>
     
@@ -168,9 +170,27 @@ Make an instance of this class in order to use it.</p>
 </div>
 <p>If there is a connection to the internet, Google’s <code class="docutils literal notranslate"><span class="pre">gTTS</span></code> will be used.
 If there is none, a local TTS service will be used by <code class="docutils literal notranslate"><span class="pre">pyttsx3</span></code>.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<ul>
+<li><dl class="simple">
+<dt>Recognise which language was written and use appropriate voice model</dt><dd><p>gTTS does this automatically(?)</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Fix issue where gTTs takes very long (15s) sometimes</dt><dd><p>This could potentially be done with concurrency, stopping the thread if it takes too long.
+However, this is rather complicated and would make the module much more convoluted.</p>
+<p>A better solution would be to either use a paid TTS api that is reliable (gTTS is free and unofficial)
+or try TTS-wrapper, which might be better. <a class="reference external" href="https://pypi.org/project/TTS-Wrapper/">https://pypi.org/project/TTS-Wrapper/</a></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
 <dl class="py class">
 <dt id="tts.Engine">
-<em class="property">class </em><code class="sig-prename descclassname">tts.</code><code class="sig-name descname">Engine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">connection_timeout</span><span class="o">=</span><span class="default_value">0.2</span></em>, <em class="sig-param"><span class="n">always_offline</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tts.Engine" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">tts.</code><code class="sig-name descname">Engine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">connection_timeout</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">always_offline</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tts.Engine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Uses an online TTS service if available, local TTS otherwise.</p>
 <dl class="field-list simple">
@@ -239,6 +259,8 @@ If there is none, a local TTS service will be used by <code class="docutils lite
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="word_pred.html" class="btn btn-neutral float-right" title="word_pred module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="example_module.html" class="btn btn-neutral float-left" title="example_module module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

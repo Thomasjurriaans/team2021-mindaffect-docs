@@ -1,4 +1,4 @@
-team2021-mindaffect
+keyboard
 ===================
 
 .. toctree::
@@ -6,3 +6,4 @@ team2021-mindaffect
 
    example_module
    tts
+   word_pred

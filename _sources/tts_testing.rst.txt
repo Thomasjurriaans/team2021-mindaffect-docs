@@ -1,7 +1,0 @@
-tts\_testing module
-===================
-
-.. automodule:: tts_testing
-   :members:
-   :undoc-members:
-   :show-inheritance:

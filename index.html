@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to team2021-mindaffect’s documentation! &mdash; team2021-mindaffect 0.1 documentation</title>
+  <title>Complete BCI spelling system &mdash; team2021-mindaffect 0.1 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="keyboard" href="modules.html" /> 
+    <link rel="next" title="Installation" href="install.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,7 +83,9 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">keyboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Keyboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
 
             
@@ -130,7 +132,7 @@
     
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Welcome to team2021-mindaffect’s documentation!</li>
+      <li>Complete BCI spelling system</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -149,18 +151,74 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-team2021-mindaffect-s-documentation">
-<h1>Welcome to team2021-mindaffect’s documentation!<a class="headerlink" href="#welcome-to-team2021-mindaffect-s-documentation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="complete-bci-spelling-system">
+<h1>Complete BCI spelling system<a class="headerlink" href="#complete-bci-spelling-system" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="welcome-to-team2021-mindaffect-s-documentation">
+<h2>Welcome to team2021-mindaffect’s documentation!<a class="headerlink" href="#welcome-to-team2021-mindaffect-s-documentation" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>This module implements a keyboard for the BCI system developed by MindAffect.</dt><dd><ul class="simple">
+<li><p>It supports adding your own configurable keyboard from a JSON file.</p></li>
+<li><p>Multiple keyboards (sub-keyboards) can be used.</p></li>
+<li><p>It is to be used cross-platform (Windows, MacOS, Linux).</p></li>
+<li><p>Predictive text: given the first few letters of a word,
+the user will be given the most likely options as ‘keys’ on the keyboard.</p></li>
+<li><p>Text to speech: allows the user to say text out loud (with a ‘say-out-loud’ key).</p></li>
+<li><p>Word correction: adds automatic correction of misspelled words with easy ability to
+undo.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="adding-a-configurable-json-keyboard">
+<h3>Adding a configurable JSON keyboard<a class="headerlink" href="#adding-a-configurable-json-keyboard" title="Permalink to this headline">¶</a></h3>
+<p>Using a <a class="reference external" href="http://www.keyboard-layout-editor.com/#/">keyboard editor</a> we can generate
+custom .json files that can be read into the program. Unlike normal keyboards we only allow
+one character per key, much like mobile keyboards, so no usage of shift to select a different
+thing on the same key.</p>
+<p>More information on this can be found in guide_to_creating_custom_json_keyboards.txt</p>
+<a class="reference internal image-reference" href="docs/images/keyboard.png"><img alt="Wow such a cool keyboard!" src="docs/images/keyboard.png" style="width: 397.5px; height: 315.0px;" /></a>
+</div>
+<div class="section" id="word-prediction-and-autocompletion">
+<h3>Word prediction and autocompletion<a class="headerlink" href="#word-prediction-and-autocompletion" title="Permalink to this headline">¶</a></h3>
+<p>Our word prediction and autocompletion module implements OpenAI’s
+<a class="reference external" href="https://openai.com/blog/better-language-models/">Generative Pretrained Transformer 2 (GPT-2)</a>
+This model was trained to predict the next word in 40GB of internet text.</p>
+</div>
+<div class="section" id="word-correction">
+<h3>Word correction<a class="headerlink" href="#word-correction" title="Permalink to this headline">¶</a></h3>
+<p>Our word correction module uses the <a class="reference external" href="https://pypi.org/project/pyspellchecker/">SpellChecker</a>
+module which is based on Peter Norvig’s <a class="reference external" href="https://norvig.com/spell-correct.html">blog post</a>
+on setting up a simple spell checking algorithm.</p>
+<p>English, Spanish, German, French and Portugese were already supported by this module. Our
+module allows the user to add their own language if they have a word frequency file for
+this language. We also implemented the option to download such a frequency list from a
+<a class="reference external" href="https://github.com/hermitdave/FrequencyWords">Git repository.</a></p>
+</div>
+<div class="section" id="text-to-speech">
+<h3>Text to speech<a class="headerlink" href="#text-to-speech" title="Permalink to this headline">¶</a></h3>
+<p>Our text-to-speech module uses the <a class="reference external" href="https://pypi.org/project/pyttsx3/">pyttsx3 module</a>
+which works offline and is compatible with both Python 2 and 3.
+If there is a connection to the internet, Google’s <a class="reference external" href="https://pypi.org/project/gTTS/">gTTs</a>
+will be used.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">keyboard</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="example_module.html">example_module module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tts.html">tts module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="word_pred.html">word_pred module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#problems">Problems</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Keyboard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="example_module.html">example_module module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tts.html">TTS Module</a></li>
 </ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="indices-and-tables">
@@ -180,7 +238,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="modules.html" class="btn btn-neutral float-right" title="keyboard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="install.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>

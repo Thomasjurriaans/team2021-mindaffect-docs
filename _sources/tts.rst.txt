@@ -1,4 +1,4 @@
-tts module
+TTS Module
 ==================
 
 .. automodule:: tts

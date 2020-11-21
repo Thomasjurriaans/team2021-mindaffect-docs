@@ -36,7 +36,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Support" href="support.html" />
+    <link rel="next" title="word_pred module" href="word_pred.html" />
     <link rel="prev" title="example_module module" href="example_module.html" /> 
 </head>
 
@@ -87,7 +87,10 @@
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Keyboard</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="example_module.html">example_module module</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">TTS Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">TTS Module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="word_pred.html">word_pred module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
@@ -162,6 +165,12 @@
 <span id="tts-module"></span><h1>TTS Module<a class="headerlink" href="#module-tts" title="Permalink to this headline">¶</a></h1>
 <p>This module is used to convert text into speech.</p>
 <p>The module contains a single class <code class="docutils literal notranslate"><span class="pre">Engine</span></code>.</p>
+<p><strong>Usage example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tts</span>
+<span class="n">tts</span> <span class="o">=</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">tts</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span><span class="n">connection_timeout</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">lang_tag</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="n">service</span><span class="o">=</span><span class="s1">&#39;free_online&#39;</span><span class="p">)</span>
+<span class="n">tts</span><span class="o">.</span><span class="n">speak</span><span class="p">(</span><span class="s2">&quot;testing testing 123&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">Engine</span></code> supports 3 different types of TTS services:</p>
 <dl class="simple">
 <dt><strong>Free offline (pyttsx3)</strong></dt><dd><ul class="simple">
@@ -190,12 +199,6 @@
 </dl>
 <p>Follow <a class="reference external" href="https://cloud.google.com/text-to-speech/docs/quickstart-protocol">these instructions</a> to get the required Google Cloud TTS credentials.
 The JSON file containing the credentials should be named <code class="docutils literal notranslate"><span class="pre">TTS-gcloud-credentials.json</span></code> and placed in the same folder as this module.</p>
-<p><strong>Usage example</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tts</span>
-<span class="n">tts</span> <span class="o">=</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">tts</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span><span class="n">connection_timeout</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">lang_tag</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="n">service</span><span class="o">=</span><span class="s1">&#39;free_online&#39;</span><span class="p">)</span>
-<span class="n">tts</span><span class="o">.</span><span class="n">speak</span><span class="p">(</span><span class="s2">&quot;testing testing 123&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
 <p><strong>Language tags</strong></p>
 <p>The language the TTS service should use is indicated with an IETF language tag.
 A list of these tags can be found <a class="reference external" href="https://gtts.readthedocs.io/en/latest/_modules/gtts/lang.html">here.</a></p>
@@ -210,7 +213,7 @@ If the service fails, the offline provider is used as a backup.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>connection_timeout</strong> (<em>float</em><em>, </em><em>optional</em>) – slowest allowed connection speed in seconds.</p></li>
-<li><p><strong>language</strong> (<em>str</em><em>, </em><em>optional</em>) – the IETF language tag of the language to speak.</p></li>
+<li><p><strong>lang_tag</strong> (<em>str</em><em>, </em><em>optional</em>) – the IETF language tag of the language to speak.</p></li>
 <li><p><strong>service</strong> (<em>str</em><em>, </em><em>optional</em>) – which TTS service to prefer. options: <code class="docutils literal notranslate"><span class="pre">paid_online</span></code>, <code class="docutils literal notranslate"><span class="pre">free_online</span></code>, <code class="docutils literal notranslate"><span class="pre">offline</span></code></p></li>
 </ul>
 </dd>
@@ -281,6 +284,8 @@ If the service fails, the offline provider is used as a backup.</p>
 
 </dd></dl>
 
+<div class="toctree-wrapper compound">
+</div>
 </div>
 
 
@@ -291,7 +296,7 @@ If the service fails, the offline provider is used as a backup.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="support.html" class="btn btn-neutral float-right" title="Support" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="word_pred.html" class="btn btn-neutral float-right" title="word_pred module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="example_module.html" class="btn btn-neutral float-left" title="example_module module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

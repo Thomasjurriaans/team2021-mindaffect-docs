@@ -15,3 +15,4 @@ Show basic usage of our module.
 
    example_module
    tts
+   word_pred

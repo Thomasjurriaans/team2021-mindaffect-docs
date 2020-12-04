@@ -1,0 +1,8 @@
+Psychopy-specific modules
+========
+
+.. toctree::
+   :maxdepth: 4
+   :caption: Contents:
+
+   psychopy_facade

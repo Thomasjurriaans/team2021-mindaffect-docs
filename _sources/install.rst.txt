@@ -1,4 +1,4 @@
-.. _install-page
+.. _install:
 
 Installation
 ============
@@ -30,7 +30,7 @@ The required packages can be found in requirements.txt and installed as follows.
 
    pip install -r requirements.txt
 
-We recommend using Python version at least 3.5
+We recommend using Python version 3.8
 
 Problems
 --------

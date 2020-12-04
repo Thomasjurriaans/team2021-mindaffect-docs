@@ -29,7 +29,7 @@ thing on the same key.
 
 More information on this can be found in guide_to_creating_custom_json_keyboards.txt
 
-.. image:: docs/images/keyboard.png
+.. image:: /../images/keyboard.png
    :width: 795
    :height: 630
    :scale: 50
@@ -64,7 +64,8 @@ will be used.
    :caption: Contents:
 
    install
-   modules
+   general_modules
+   psychopy_modules
    support
 
 Indices and tables

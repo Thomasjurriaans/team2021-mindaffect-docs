@@ -1,0 +1,6 @@
+window.py
+==================
+
+.. automodule:: window
+   :undoc-members:
+   :show-inheritance:

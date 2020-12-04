@@ -1,0 +1,7 @@
+keyboard_loader module
+======================
+
+.. automodule:: keyboard_loader
+   :members:
+   :undoc-members:
+   :show-inheritance:

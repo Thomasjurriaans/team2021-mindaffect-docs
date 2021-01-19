@@ -1,4 +1,4 @@
-tts.py (text-to-speech)
+tts.py
 =======================
 
 .. automodule:: tts

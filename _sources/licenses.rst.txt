@@ -1,0 +1,20 @@
+.. _licenses:
+
+Licenses
+========
+
+This is an overview of the libraries we use in our module and which licenses they have.
+   * `pyttsx3 <https://pypi.org/project/pyttsx3/>`_ GNU General Public License v3 (GPLv3)
+   * `gTTS <https://pypi.org/project/gTTS/>`_ MIT License (MIT)
+   * `playsound <https://pypi.org/project/playsound/>`_ MIT License (MIT)
+   * `next-word-prediction <https://pypi.org/project/next-word-prediction/>`_ MIT License (MIT)
+   * `torch <https://pypi.org/project/torch/>`_ BSD License (BSD-3)
+   * `pytorch-transformers <https://pypi.org/project/pytorch-transformers/>`_ Apache Software License (Apache)
+   * `streamlit <https://pypi.org/project/streamlit/>`_ Apache 2
+   * `pyspellchecker <https://pypi.org/project/pyspellchecker/>`_ OSI Approved, MIT License (MIT)
+   * `PsychoPy <https://pypi.org/project/PsychoPy/>`_ GNU GPLv3 (or more recent equivalent)
+
+Our module also depends on these other files/models.
+   * `GPT-2 <https://github.com/openai/gpt-2/blob/master/LICENSE>`_ MIT License (MIT)
+   * `Word frequency lists <https://github.com/hermitdave/FrequencyWords/blob/master/LICENSE>`_ MIT License (MIT)
+   * `Sphinx <http://sphinxsearch.com/services/embedding/>`_ GNU General Public License (GPL), version 2

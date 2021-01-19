@@ -1,0 +1,181 @@
+keyboard package
+================
+
+Submodules
+----------
+
+keyboard.app\_exceptions module
+-------------------------------
+
+.. automodule:: keyboard.app_exceptions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.bci\_keyboard module
+-----------------------------
+
+.. automodule:: keyboard.bci_keyboard
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.dictionary_retrieval module
+------------------------------------
+
+.. automodule:: keyboard.dictionary_retrieval
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.create_ngram_file module
+----------------------------------
+
+.. automodule:: keyboard.create_ngram_file
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.framework\_facade module
+---------------------------------
+
+.. automodule:: keyboard.framework_facade
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.key module
+-------------------
+
+.. automodule:: keyboard.key
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.keyboard\_loader module
+--------------------------------
+
+.. automodule:: keyboard.keyboard_loader
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.windows.window module
+------------------------------
+
+.. automodule:: keyboard.windows.window
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.windows.keyboard_window module
+---------------------------------------
+
+.. automodule:: keyboard.windows.keyboard_window
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.windows.keypad_window module
+-------------------------------------
+
+.. automodule:: keyboard.windows.keypad_window
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.windows.menu\_window module
+------------------------------------
+
+.. automodule:: keyboard.windows.menu_window
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.windows.submenu\_window module
+---------------------------------------
+
+.. automodule:: keyboard.windows.submenu_window
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.windows.electrode\_quality\_window module
+--------------------------------------------------
+
+.. automodule:: keyboard.windows.electrode_quality_window
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.windows.calibration\_window module
+-------------------------------------------
+
+.. automodule:: keyboard.windows.calibration_window
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.windows.cued\_prediction\_window module
+------------------------------------------------
+
+.. automodule:: keyboard.windows.cued_prediction_window
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.windows.connection\_window module
+------------------------------------------
+
+.. automodule:: keyboard.windows.connection_window
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.psychopy\_facade module
+--------------------------------
+
+.. automodule:: keyboard.psychopy_facade
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.text\_field module
+---------------------------
+
+.. automodule:: keyboard.text_field
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.tts module
+-------------------
+
+.. automodule:: keyboard.tts
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.word\_correction module
+--------------------------------
+
+.. automodule:: keyboard.word_correction
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+keyboard.word\_pred module
+--------------------------
+
+.. automodule:: keyboard.word_pred
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: keyboard
+   :members:
+   :undoc-members:
+   :show-inheritance:

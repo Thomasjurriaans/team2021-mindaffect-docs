@@ -1,6 +1,7 @@
 window.py
-==================
+=========
 
-.. automodule:: window
+.. automodule:: windows.window
+   :members:
    :undoc-members:
    :show-inheritance:

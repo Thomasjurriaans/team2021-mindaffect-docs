@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="psychopy_facade.py" href="psychopy_facade.html" />
-    <link rel="prev" title="text_field.py" href="text_field.html" /> 
+    <link rel="next" title="keyboard_window.py" href="keyboard_window.html" />
+    <link rel="prev" title="Window Modules" href="window_modules.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,20 +86,34 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="general_modules.html">General Modules</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="tts.html">tts.py (text-to-speech)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="word_pred.html">word_pred module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="keyboard_loader.html">keyboard_loader module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="word_correction.html">word_correction.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="framework_facade.html">framework_facade.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bci_keyboard.html">bci_keyboard.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_ngram_file.html">create_ngram_file.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionary_retrieval.html">dictionary_retrieval.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="framework_facade.html">framework_facade.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="key.html">key.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="key_type.html">key_type.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keyboard_loader.html">keyboard_loader.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_field.html">text_field.py</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">window.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="psychopy_facade.html">psychopy_facade.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">dictionaries.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tts.html">tts.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="word_correction.html">word_correction.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="word_pred.html">word_pred.py</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="window_modules.html">Window Modules</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="keyboard_window.html">keyboard_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="keypad_window.html">keypad_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu_window.html">menu_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="submenu_window.html">submenu_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calibration_window.html">calibration_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cued_prediction_window.html">cued_prediction_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="electrode_quality_window.html">electrode_quality_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="connection_window.html">connection_window.py</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="psychopy_modules.html">Psychopy-specific modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_keyboard_guide.html">Guide to creating custom JSON keyboards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licenses.html">Licenses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
 
@@ -149,6 +163,8 @@
         
           <li><a href="general_modules.html">General Modules</a> &raquo;</li>
         
+          <li><a href="window_modules.html">Window Modules</a> &raquo;</li>
+        
       <li>window.py</li>
     
     
@@ -168,26 +184,113 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-window">
-<span id="window-py"></span><h1>window.py<a class="headerlink" href="#module-window" title="Permalink to this headline">¶</a></h1>
-<p>This module is for window management.</p>
-<p>It contains the superclass <code class="docutils literal notranslate"><span class="pre">Window</span></code>, and two subclasses <code class="docutils literal notranslate"><span class="pre">Keypad</span></code> and <code class="docutils literal notranslate"><span class="pre">Menu</span></code>.</p>
+  <div class="section" id="module-windows.window">
+<span id="window-py"></span><h1>window.py<a class="headerlink" href="#module-windows.window" title="Permalink to this headline">¶</a></h1>
+<p>This module contains a single super class representing a window.</p>
 <dl class="simple">
-<dt>A <code class="docutils literal notranslate"><span class="pre">Window</span></code> has the following functionality:</dt><dd><ul class="simple">
-<li><p>A get_keys() function to retrieve all keys</p></li>
-<li><p>An activate() function to activate the window</p></li>
-<li><p>A deactivate() function to deactivate the window</p></li>
-</ul>
-</dd>
-<dt>A <code class="docutils literal notranslate"><span class="pre">Keypad</span></code> has the following additional functionality:</dt><dd><ul class="simple">
-<li><p>A __build_keypad() function to set up the Keypad.</p></li>
-</ul>
-</dd>
-<dt>A <code class="docutils literal notranslate"><span class="pre">Menu</span></code> has the following additional functionality:</dt><dd><ul class="simple">
-<li><p>A __build_menu() function to set up the Menu.</p></li>
+<dt>A Window must have:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">activate()</span></code>              : Method to activate objects to be rendered.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">deactivate()</span></code>            : Method to deactivate objects to not be rendered.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">switch_window()</span></code>         : Method to switch from it to another instance of a window.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">handle_mouse_events()</span></code>   : Method to handle process selection of its objects.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">draw()</span></code>                  : Method to change the state of its objects (Noisetag).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">select_key()</span></code>            : Method to activate the key when using prediction trials instead of a mouseclick.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reset_flicker()</span></code>         : Method to reset the flickering.</p></li>
 </ul>
 </dd>
 </dl>
+<dl class="py class">
+<dt id="windows.window.Window">
+<em class="property">class </em><code class="sig-prename descclassname">windows.window.</code><code class="sig-name descname">Window</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span></em>, <em class="sig-param"><span class="n">facade</span></em>, <em class="sig-param"><span class="n">style</span></em>, <em class="sig-param"><span class="n">settings_manager</span></em>, <em class="sig-param"><span class="n">use_flickering</span></em>, <em class="sig-param"><span class="n">noisetag</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.window.Window" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Superclass to represent a Window.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parent</strong> (<a class="reference internal" href="#windows.window.Window" title="windows.window.Window"><em>windows.window.Window</em></a>) – The parent of a window if existing.</p></li>
+<li><p><strong>facade</strong> (<a class="reference internal" href="framework_facade.html#framework_facade.FrameworkFacade" title="framework_facade.FrameworkFacade"><em>framework_facade.FrameworkFacade</em></a>) – The GUI-specific functionality.</p></li>
+<li><p><strong>style</strong> (<em>dict</em>) – Style configurations for objects contained by a window.</p></li>
+<li><p><strong>settings_manager</strong> (<em>settings_manager.SettingsManager</em>) – Object to handle access to settings.</p></li>
+<li><p><strong>use_flickering</strong> (<em>bool</em>) – A boolean indicating whether or not to use flickering in the Window.</p></li>
+<li><p><strong>noisetag</strong> (<em>noisetag.Noisetag</em>) – Reference to the Noisetag module from MindAffect.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="windows.window.Window.activate">
+<code class="sig-name descname">activate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windows.window.Window.activate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Activates all visual and functional elements of the Window.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="windows.window.Window.deactivate">
+<code class="sig-name descname">deactivate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windows.window.Window.deactivate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deactivates all visual and functional elements of the Window.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="windows.window.Window.reset_key_colors">
+<code class="sig-name descname">reset_key_colors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windows.window.Window.reset_key_colors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets all keys to their original color</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="windows.window.Window.switch_window">
+<code class="sig-name descname">switch_window</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">window_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.window.Window.switch_window" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switches to window specified by window_name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>window_name</strong> (<em>str</em>) – The link to the window to switch to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="windows.window.Window.handle_mouse_events">
+<code class="sig-name descname">handle_mouse_events</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windows.window.Window.handle_mouse_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles mouse events within the Window.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="windows.window.Window.draw">
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.window.Window.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the state of the buttons/keys within the Window.
+It draws the display with the colors given by the Noisetag module if flickering is active.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>noisetag</strong> (<em>noisetag.Noisetag</em>) – Reference to the Noisetag module from MindAffect.</p></li>
+<li><p><strong>last_flip_time</strong> (<em>int</em>) – Timestamp of last screen update, i.e. buffer flip.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="windows.window.Window.select_key">
+<code class="sig-name descname">select_key</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">objID</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.window.Window.select_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects and activates the key (like a mouseclick) if selected using prediction trials from the Noisetag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>objID</strong> (<em>int</em>) – ID of the object that is selected.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="windows.window.Window.reset_flicker">
+<code class="sig-name descname">reset_flicker</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windows.window.Window.reset_flicker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the number of stimuli for the Noisetag when changing keypads.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="windows.window.Window.get_keys">
+<code class="sig-name descname">get_keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windows.window.Window.get_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all keys used in the Window.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -198,10 +301,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="psychopy_facade.html" class="btn btn-neutral float-right" title="psychopy_facade.py" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="keyboard_window.html" class="btn btn-neutral float-right" title="keyboard_window.py" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="text_field.html" class="btn btn-neutral float-left" title="text_field.py" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="window_modules.html" class="btn btn-neutral float-left" title="Window Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

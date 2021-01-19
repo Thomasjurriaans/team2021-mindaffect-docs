@@ -38,10 +38,6 @@
     <link rel="search" title="Search" href="search.html" />
  
 
-    <script>
-      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
-    </script>
-
 
 </head>
 
@@ -92,6 +88,8 @@
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general_modules.html">General Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psychopy_modules.html">Psychopy-specific modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_keyboard_guide.html">Guide to creating custom JSON keyboards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licenses.html">Licenses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
 
@@ -159,6 +157,7 @@
 
    <div class="modindex-jumpbox">
    <a href="#cap-b"><strong>b</strong></a> | 
+   <a href="#cap-c"><strong>c</strong></a> | 
    <a href="#cap-d"><strong>d</strong></a> | 
    <a href="#cap-f"><strong>f</strong></a> | 
    <a href="#cap-k"><strong>k</strong></a> | 
@@ -177,12 +176,20 @@
        <a href="bci_keyboard.html#module-bci_keyboard"><code class="xref">bci_keyboard</code></a></td><td>
        <em></em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-c"><td></td><td>
+       <strong>c</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="create_ngram_file.html#module-create_ngram_file"><code class="xref">create_ngram_file</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-d"><td></td><td>
        <strong>d</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="dictionaries.html#module-dictionaries"><code class="xref">dictionaries</code></a></td><td>
+       <a href="dictionary_retrieval.html#module-dictionary_retrieval"><code class="xref">dictionary_retrieval</code></a></td><td>
        <em></em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-f"><td></td><td>
@@ -199,6 +206,122 @@
        <td></td>
        <td>
        <a href="key.html#module-key"><code class="xref">key</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="key_type.html#module-key_type"><code class="xref">key_type</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td><img src="_static/minus.png" class="toggler"
+              id="toggle-1" style="display: none" alt="-" /></td>
+       <td>
+       <a href="keyboard.html#module-keyboard"><code class="xref">keyboard</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.app_exceptions"><code class="xref">keyboard.app_exceptions</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.bci_keyboard"><code class="xref">keyboard.bci_keyboard</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.create_ngram_file"><code class="xref">keyboard.create_ngram_file</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.dictionary_retrieval"><code class="xref">keyboard.dictionary_retrieval</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.framework_facade"><code class="xref">keyboard.framework_facade</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.key"><code class="xref">keyboard.key</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.keyboard_loader"><code class="xref">keyboard.keyboard_loader</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.psychopy_facade"><code class="xref">keyboard.psychopy_facade</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.text_field"><code class="xref">keyboard.text_field</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.tts"><code class="xref">keyboard.tts</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.windows.calibration_window"><code class="xref">keyboard.windows.calibration_window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.windows.connection_window"><code class="xref">keyboard.windows.connection_window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.windows.cued_prediction_window"><code class="xref">keyboard.windows.cued_prediction_window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.windows.electrode_quality_window"><code class="xref">keyboard.windows.electrode_quality_window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.windows.keyboard_window"><code class="xref">keyboard.windows.keyboard_window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.windows.keypad_window"><code class="xref">keyboard.windows.keypad_window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.windows.menu_window"><code class="xref">keyboard.windows.menu_window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.windows.submenu_window"><code class="xref">keyboard.windows.submenu_window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.windows.window"><code class="xref">keyboard.windows.window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.word_correction"><code class="xref">keyboard.word_correction</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard.html#module-keyboard.word_pred"><code class="xref">keyboard.word_pred</code></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
@@ -230,9 +353,55 @@
      <tr class="cap" id="cap-w"><td></td><td>
        <strong>w</strong></td><td></td></tr>
      <tr>
-       <td></td>
+       <td><img src="_static/minus.png" class="toggler"
+              id="toggle-2" style="display: none" alt="-" /></td>
        <td>
-       <a href="window.html#module-window"><code class="xref">window</code></a></td><td>
+       <code class="xref">windows</code></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="calibration_window.html#module-windows.calibration_window"><code class="xref">windows.calibration_window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="connection_window.html#module-windows.connection_window"><code class="xref">windows.connection_window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="cued_prediction_window.html#module-windows.cued_prediction_window"><code class="xref">windows.cued_prediction_window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="electrode_quality_window.html#module-windows.electrode_quality_window"><code class="xref">windows.electrode_quality_window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keyboard_window.html#module-windows.keyboard_window"><code class="xref">windows.keyboard_window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="keypad_window.html#module-windows.keypad_window"><code class="xref">windows.keypad_window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="menu_window.html#module-windows.menu_window"><code class="xref">windows.menu_window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="submenu_window.html#module-windows.submenu_window"><code class="xref">windows.submenu_window</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="window.html#module-windows.window"><code class="xref">windows.window</code></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>

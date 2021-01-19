@@ -1,7 +1,0 @@
-dictionaries.py
-==================
-
-.. automodule:: dictionaries
-   :members:
-   :undoc-members:
-   :show-inheritance:

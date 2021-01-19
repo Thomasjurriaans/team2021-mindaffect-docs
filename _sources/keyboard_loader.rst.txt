@@ -1,4 +1,4 @@
-keyboard_loader module
+keyboard_loader.py
 ======================
 
 .. automodule:: keyboard_loader

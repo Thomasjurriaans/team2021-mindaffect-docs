@@ -86,6 +86,8 @@
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general_modules.html">General Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psychopy_modules.html">Psychopy-specific modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_keyboard_guide.html">Guide to creating custom JSON keyboards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licenses.html">Licenses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
 
@@ -154,32 +156,31 @@
             
   <div class="section" id="complete-bci-spelling-system">
 <h1>Complete BCI spelling system<a class="headerlink" href="#complete-bci-spelling-system" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="welcome-to-team2021-mindaffect-s-documentation">
-<h2>Welcome to team2021-mindaffect’s documentation!<a class="headerlink" href="#welcome-to-team2021-mindaffect-s-documentation" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<dl class="simple">
-<dt>This module implements a keyboard for the BCI system developed by MindAffect.</dt><dd><ul class="simple">
-<li><p>It supports adding your own configurable keyboard from a JSON file.</p></li>
-<li><p>Multiple keyboards (sub-keyboards) can be used.</p></li>
-<li><p>It is to be used cross-platform (Windows, MacOS, Linux).</p></li>
-<li><p>Predictive text: given the first few letters of a word,
-the user will be given the most likely options as ‘keys’ on the keyboard.</p></li>
-<li><p>Text to speech: allows the user to say text out loud (with a ‘say-out-loud’ key).</p></li>
-<li><p>Word correction: adds automatic correction of misspelled words with easy ability to
-undo.</p></li>
+<a class="reference internal image-reference" href="_images/keyboard.png"><img alt="A picture of our keyboard" src="_images/keyboard.png" style="width: 800px;" /></a>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>This module implements a keyboard for the BCI system developed by MindAffect.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The following features are supported:</p>
+<ul>
+<li><p>Adding a custom, configurable keyboard from a JSON file</p></li>
+<li><p>Multiple keyboards (sub-keyboards) can be used</p></li>
+<li><p>Cross-platform usage (Windows, MacOS, Linux)</p></li>
+<li><p>Predictive text</p></li>
+<li><p>Text-to-speech</p></li>
+<li><p>Word correction</p></li>
 </ul>
-</dd>
-</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="adding-a-configurable-json-keyboard">
-<h3>Adding a configurable JSON keyboard<a class="headerlink" href="#adding-a-configurable-json-keyboard" title="Permalink to this headline">¶</a></h3>
-<p>Using a <a class="reference external" href="http://www.keyboard-layout-editor.com/#/">keyboard editor</a> we can generate
-custom .json files that can be read into the program. Unlike normal keyboards we only allow
-one character per key, much like mobile keyboards, so no usage of shift to select a different
-thing on the same key.</p>
-<p>More information on this can be found in guide_to_creating_custom_json_keyboards.txt</p>
-<a class="reference internal image-reference" href="_images/keyboard.png"><img alt="Wow such a cool keyboard!" src="_images/keyboard.png" style="width: 397.5px; height: 315.0px;" /></a>
+<span id="configurable-keyboard"></span><h3>Adding a configurable JSON keyboard<a class="headerlink" href="#adding-a-configurable-json-keyboard" title="Permalink to this headline">¶</a></h3>
+<p>Using this <a class="reference external" href="http://www.keyboard-layout-editor.com/#/">keyboard editor</a> custom .json files can be generated that are read into the program. Unlike normal keyboards only one character per key is allowed, much like mobile keyboards, since the BCI has no “shift” key.</p>
+<p>More information on this can be found in <a class="reference internal" href="custom_keyboard_guide.html#custom-keyboard-guide"><span class="std std-ref">Guide to creating custom JSON keyboards</span></a></p>
 </div>
 <div class="section" id="word-prediction-and-autocompletion">
 <h3>Word prediction and autocompletion<a class="headerlink" href="#word-prediction-and-autocompletion" title="Permalink to this headline">¶</a></h3>
@@ -199,10 +200,14 @@ this language. We also implemented the option to download such a frequency list 
 </div>
 <div class="section" id="text-to-speech">
 <h3>Text to speech<a class="headerlink" href="#text-to-speech" title="Permalink to this headline">¶</a></h3>
-<p>Our text-to-speech module uses the <a class="reference external" href="https://pypi.org/project/pyttsx3/">pyttsx3 module</a>
-which works offline and is compatible with both Python 2 and 3.
-If there is a connection to the internet, Google’s <a class="reference external" href="https://pypi.org/project/gTTS/">gTTs</a>
-will be used.</p>
+<p>Our text-to-speech module supports multiple TTS suppliers.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For offline use, the <a class="reference external" href="https://pypi.org/project/pyttsx3/">pyttsx3 library</a>.</p></li>
+<li><p>For online use, <a class="reference external" href="https://pypi.org/project/gTTS/">gTTs</a> can be used which uses Google Translate’s TTS api.</p></li>
+<li><p>For high quality paid online use, <a class="reference external" href="https://cloud.google.com/text-to-speech">Google WaveNet TTS</a> is supported. Only credentials need to be provided.</p></li>
+</ul>
+</div></blockquote>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -212,36 +217,56 @@ will be used.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="general_modules.html">General Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tts.html">tts.py (text-to-speech)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="word_pred.html">word_pred module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="keyboard_loader.html">keyboard_loader module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="word_correction.html">word_correction.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="framework_facade.html">framework_facade.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bci_keyboard.html">bci_keyboard.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_ngram_file.html">create_ngram_file.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionary_retrieval.html">dictionary_retrieval.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="framework_facade.html">framework_facade.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="key.html">key.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="key_type.html">key_type.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keyboard_loader.html">keyboard_loader.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_field.html">text_field.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="window.html">window.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="psychopy_facade.html">psychopy_facade.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">dictionaries.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tts.html">tts.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="word_correction.html">word_correction.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="word_pred.html">word_pred.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="window_modules.html">Window Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="window.html">window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="keyboard_window.html">keyboard_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="keypad_window.html">keypad_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu_window.html">menu_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="submenu_window.html">submenu_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calibration_window.html">calibration_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cued_prediction_window.html">cued_prediction_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="electrode_quality_window.html">electrode_quality_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="connection_window.html">connection_window.py</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="psychopy_modules.html">Psychopy-specific modules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="psychopy_facade.html">psychopy_facade.py</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="custom_keyboard_guide.html">Guide to creating custom JSON keyboards</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="custom_keyboard_guide.html#basic-structure">Basic structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_keyboard_guide.html#keys">Keys</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="custom_keyboard_guide.html#special-keys">Special keys</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="custom_keyboard_guide.html#current-available-keyboards">Current available keyboards</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lower_case_layout.html">lower_case_layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upper_case_layout.html">upper_case_layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="symbols_layout.html">symbols_layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="additional_symbols_layout.html">additional_symbols_layout</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="licenses.html">Licenses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
-</ul>
 </div>
 
 

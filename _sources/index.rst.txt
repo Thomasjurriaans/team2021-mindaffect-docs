@@ -23,6 +23,11 @@ This module implements a keyboard for the BCI system developed by MindAffect.
 
      * Word correction
 
+     * In-application BCI calibration
+
+     * Using almost any language
+
+     * Saving written text
 
 Features
 --------
@@ -33,26 +38,23 @@ Adding a configurable JSON keyboard
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Using this `keyboard editor <http://www.keyboard-layout-editor.com/#/>`_ custom .json files can be generated that are read into the program. Unlike normal keyboards only one character per key is allowed, much like mobile keyboards, since the BCI has no "shift" key.
 
-More information on this can be found in :ref:`custom-keyboard-guide`
+More information on this can be found on the :ref:`custom-keyboard-guide`
 
 Word prediction and autocompletion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Our word prediction and autocompletion module implements OpenAI's
-`Generative Pretrained Transformer 2 (GPT-2) <https://openai.com/blog/better-language-models/>`_
-This model was trained to predict the next word in 40GB of internet text.
+The word prediction and autocompletion module uses n-gram frequency lists to predict what words the user is most likely to type next. Using this technique it is possible to easily create and use a custom frequency list for the user. This can enhance the user experience by suggesting for example the names of relatives whom the user wants to address.
+
+Read more about word prediction and autocompletion: :ref:`word_prediction`
 
 Word correction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Our word correction module uses the `SpellChecker <https://pypi.org/project/pyspellchecker/>`_
-module which is based on Peter Norvig's `blog post <https://norvig.com/spell-correct.html>`_
-on setting up a simple spell checking algorithm.
+The word correction module uses the `SpellChecker <https://pypi.org/project/pyspellchecker/>`_ module which is based on Peter Norvig's `blog post <https://norvig.com/spell-correct.html>`_ on setting up a simple spell checking algorithm.
 
-English, Spanish, German, French and Portugese were already supported by this module. Our
-module allows the user to add their own language if they have a word frequency file for
-this language. We also implemented the option to download such a frequency list from a
-`Git repository. <https://github.com/hermitdave/FrequencyWords>`_
+English, Spanish, German, French and Portugese were already supported by this module. The :ref:`word_correction` module allows the user to add their own language if they have a word frequency file for this language. We also implemented the option to download such a frequency list from a `Git repository. <https://github.com/hermitdave/FrequencyWords>`_
 
-Text to speech
+Read more about word correction: :ref:`word_correction`
+
+Text-to-speech
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Our text-to-speech module supports multiple TTS suppliers.
 
@@ -62,6 +64,8 @@ Our text-to-speech module supports multiple TTS suppliers.
 
    * For high quality paid online use, `Google WaveNet TTS <https://cloud.google.com/text-to-speech>`_ is supported. Only credentials need to be provided.
 
+   For more details about text-to-speech:  :ref:`text_to_speech`
+
 .. toctree::
    :caption: Contents:
 
@@ -69,5 +73,5 @@ Our text-to-speech module supports multiple TTS suppliers.
    general_modules
    psychopy_modules
    custom_keyboard_guide
+   new_languages_guide
    licenses
-   support

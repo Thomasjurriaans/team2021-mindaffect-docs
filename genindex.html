@@ -86,8 +86,8 @@
 <li class="toctree-l1"><a class="reference internal" href="general_modules.html">General Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psychopy_modules.html">Psychopy-specific modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_keyboard_guide.html">Guide to creating custom JSON keyboards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new_languages_guide.html">Guide to adding new languages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="licenses.html">Licenses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
 
             
@@ -354,12 +354,6 @@
         <li><a href="calibration_window.html#windows.calibration_window.CalibrationWindow">(class in windows.calibration_window)</a>
 </li>
       </ul></li>
-      <li><a href="keyboard.html#keyboard.word_correction.WordCorrection.candidates">candidates() (keyboard.word_correction.WordCorrection method)</a>
-
-      <ul>
-        <li><a href="word_correction.html#word_correction.WordCorrection.candidates">(word_correction.WordCorrection method)</a>
-</li>
-      </ul></li>
       <li><a href="keyboard.html#keyboard.psychopy_facade.PsychopyFacade.change_button_color">change_button_color() (keyboard.psychopy_facade.PsychopyFacade method)</a>
 
       <ul>
@@ -440,14 +434,14 @@
         <li><a href="word_pred.html#word_pred.WordPred.copy_capitalization">(word_pred.WordPred method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="keyboard.html#keyboard.word_correction.WordCorrection.correct">correct() (keyboard.word_correction.WordCorrection method)</a>
 
       <ul>
         <li><a href="word_correction.html#word_correction.WordCorrection.correct">(word_correction.WordCorrection method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="framework_facade.html#framework_facade.FrameworkFacade.create_button">create_button() (framework_facade.FrameworkFacade method)</a>
 
       <ul>
@@ -692,12 +686,24 @@
         <li><a href="electrode_quality_window.html#windows.electrode_quality_window.ElectrodeQualityWindow">(class in windows.electrode_quality_window)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="keyboard.html#keyboard.tts.Engine">Engine (class in keyboard.tts)</a>
 
       <ul>
         <li><a href="tts.html#tts.Engine">(class in tts)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="keyboard.html#keyboard.word_pred.WordPred.ensure_directory">ensure_directory() (keyboard.word_pred.WordPred static method)</a>
+
+      <ul>
+        <li><a href="word_pred.html#word_pred.WordPred.ensure_directory">(word_pred.WordPred static method)</a>
+</li>
+      </ul></li>
+      <li><a href="create_ngram_file.html#create_ngram_file.CreateNgramFile.ensure_path">ensure_path() (create_ngram_file.CreateNgramFile static method)</a>
+
+      <ul>
+        <li><a href="keyboard.html#keyboard.create_ngram_file.CreateNgramFile.ensure_path">(keyboard.create_ngram_file.CreateNgramFile static method)</a>
 </li>
       </ul></li>
       <li><a href="key_type.html#key_type.KeyType.ENTER_KEY">ENTER_KEY (key_type.KeyType attribute)</a>
@@ -730,6 +736,8 @@
         <li><a href="electrode_quality_window.html#windows.electrode_quality_window.ElectrodeQualityWindow.facade">(windows.electrode_quality_window.ElectrodeQualityWindow attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="framework_facade.html#framework_facade.FrameworkFacade.flip">flip() (framework_facade.FrameworkFacade method)</a>
 
       <ul>
@@ -740,8 +748,6 @@
         <li><a href="psychopy_facade.html#psychopy_facade.PsychopyFacade.flip">(psychopy_facade.PsychopyFacade method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     framework_facade
 
@@ -755,18 +761,6 @@
         <li><a href="keyboard.html#keyboard.framework_facade.FrameworkFacade">(class in keyboard.framework_facade)</a>
 </li>
       </ul></li>
-      <li><a href="keyboard.html#keyboard.word_pred.WordPred.freq_autocomplete">freq_autocomplete() (keyboard.word_pred.WordPred method)</a>
-
-      <ul>
-        <li><a href="word_pred.html#word_pred.WordPred.freq_autocomplete">(word_pred.WordPred method)</a>
-</li>
-      </ul></li>
-      <li><a href="keyboard.html#keyboard.word_pred.WordPred.freq_predict">freq_predict() (keyboard.word_pred.WordPred method)</a>
-
-      <ul>
-        <li><a href="word_pred.html#word_pred.WordPred.freq_predict">(word_pred.WordPred method)</a>
-</li>
-      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -776,11 +770,13 @@
       <li><a href="create_ngram_file.html#create_ngram_file.CreateNgramFile.generate">generate() (create_ngram_file.CreateNgramFile static method)</a>
 
       <ul>
-        <li><a href="dictionary_retrieval.html#dictionary_retrieval.generate">(in module dictionary_retrieval)</a>
-</li>
-        <li><a href="keyboard.html#keyboard.dictionary_retrieval.generate">(in module keyboard.dictionary_retrieval)</a>
-</li>
         <li><a href="keyboard.html#keyboard.create_ngram_file.CreateNgramFile.generate">(keyboard.create_ngram_file.CreateNgramFile static method)</a>
+</li>
+      </ul></li>
+      <li><a href="keyboard.html#keyboard.windows.connection_window.ConnectionWindow.get_connection_status">get_connection_status() (keyboard.windows.connection_window.ConnectionWindow method)</a>
+
+      <ul>
+        <li><a href="connection_window.html#windows.connection_window.ConnectionWindow.get_connection_status">(windows.connection_window.ConnectionWindow method)</a>
 </li>
       </ul></li>
       <li><a href="keyboard.html#keyboard.windows.keyboard_window.KeyboardWindow.get_keys">get_keys() (keyboard.windows.keyboard_window.KeyboardWindow method)</a>
@@ -817,14 +813,14 @@
         <li><a href="word_pred.html#word_pred.WordPred.get_probability">(word_pred.WordPred method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="keyboard.html#keyboard.text_field.TextField.get_state">get_state() (keyboard.text_field.TextField method)</a>
 
       <ul>
         <li><a href="text_field.html#text_field.TextField.get_state">(text_field.TextField method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="keyboard.html#keyboard.text_field.TextField.get_text_history">get_text_history() (keyboard.text_field.TextField method)</a>
 
       <ul>
@@ -859,18 +855,6 @@
         <li><a href="menu_window.html#windows.menu_window.MenuWindow.get_window">(windows.menu_window.MenuWindow method)</a>
 </li>
         <li><a href="submenu_window.html#windows.submenu_window.SubMenuWindow.get_window">(windows.submenu_window.SubMenuWindow method)</a>
-</li>
-      </ul></li>
-      <li><a href="keyboard.html#keyboard.word_pred.WordPred.gpt_autocomplete">gpt_autocomplete() (keyboard.word_pred.WordPred method)</a>
-
-      <ul>
-        <li><a href="word_pred.html#word_pred.WordPred.gpt_autocomplete">(word_pred.WordPred method)</a>
-</li>
-      </ul></li>
-      <li><a href="keyboard.html#keyboard.word_pred.WordPred.gpt_predict">gpt_predict() (keyboard.word_pred.WordPred method)</a>
-
-      <ul>
-        <li><a href="word_pred.html#word_pred.WordPred.gpt_predict">(word_pred.WordPred method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1234,10 +1218,10 @@
         <li><a href="keyboard_loader.html#keyboard_loader.KeyboardLoader.load_json">(keyboard_loader.KeyboardLoader static method)</a>
 </li>
       </ul></li>
-      <li><a href="keyboard.html#keyboard.word_pred.WordPred.load_model">load_model() (keyboard.word_pred.WordPred method)</a>
+      <li><a href="keyboard.html#keyboard.word_pred.WordPred.load_ngrams">load_ngrams() (keyboard.word_pred.WordPred static method)</a>
 
       <ul>
-        <li><a href="word_pred.html#word_pred.WordPred.load_model">(word_pred.WordPred method)</a>
+        <li><a href="word_pred.html#word_pred.WordPred.load_ngrams">(word_pred.WordPred static method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1507,13 +1491,9 @@
         <li><a href="calibration_window.html#windows.calibration_window.CalibrationWindow.pred">(windows.calibration_window.CalibrationWindow attribute)</a>
 </li>
       </ul></li>
-      <li><a href="keyboard.html#keyboard.word_correction.WordCorrection.predict">predict() (keyboard.word_correction.WordCorrection method)</a>
+      <li><a href="keyboard.html#keyboard.word_pred.WordPred.predict">predict() (keyboard.word_pred.WordPred method)</a>
 
       <ul>
-        <li><a href="keyboard.html#keyboard.word_pred.WordPred.predict">(keyboard.word_pred.WordPred method)</a>
-</li>
-        <li><a href="word_correction.html#word_correction.WordCorrection.predict">(word_correction.WordCorrection method)</a>
-</li>
         <li><a href="word_pred.html#word_pred.WordPred.predict">(word_pred.WordPred method)</a>
 </li>
       </ul></li>
@@ -1562,12 +1542,6 @@
 
       <ul>
         <li><a href="word_pred.html#word_pred.WordPred.remove_first_duplicates">(word_pred.WordPred method)</a>
-</li>
-      </ul></li>
-      <li><a href="keyboard.html#keyboard.word_pred.WordPred.remove_last">remove_last() (keyboard.word_pred.WordPred method)</a>
-
-      <ul>
-        <li><a href="word_pred.html#word_pred.WordPred.remove_last">(word_pred.WordPred method)</a>
 </li>
       </ul></li>
       <li><a href="keyboard.html#keyboard.text_field.TextField.replace_last_word">replace_last_word() (keyboard.text_field.TextField method)</a>
@@ -1820,11 +1794,9 @@
 </li>
       <li><a href="key_type.html#key_type.KeyType.SWITCH_TO_CALIBRATION_KEY">SWITCH_TO_CALIBRATION_KEY (key_type.KeyType attribute)</a>
 </li>
-      <li><a href="key_type.html#key_type.KeyType.SWITCH_TO_CALIBRATION_MENU_KEY">SWITCH_TO_CALIBRATION_MENU_KEY (key_type.KeyType attribute)</a>
+      <li><a href="key_type.html#key_type.KeyType.SWITCH_TO_CONFIGURATION_MENU_KEY">SWITCH_TO_CONFIGURATION_MENU_KEY (key_type.KeyType attribute)</a>
 </li>
       <li><a href="key_type.html#key_type.KeyType.SWITCH_TO_CUED_PREDICTION_KEY">SWITCH_TO_CUED_PREDICTION_KEY (key_type.KeyType attribute)</a>
-</li>
-      <li><a href="key_type.html#key_type.KeyType.SWITCH_TO_CUED_PREDICTION_MENU_KEY">SWITCH_TO_CUED_PREDICTION_MENU_KEY (key_type.KeyType attribute)</a>
 </li>
       <li><a href="key_type.html#key_type.KeyType.SWITCH_TO_ELECTRODE_QUALITY_KEY">SWITCH_TO_ELECTRODE_QUALITY_KEY (key_type.KeyType attribute)</a>
 </li>
@@ -2042,12 +2014,6 @@
 
       <ul>
         <li><a href="word_pred.html#word_pred.WordPred.update_frequencies">(word_pred.WordPred method)</a>
-</li>
-      </ul></li>
-      <li><a href="keyboard.html#keyboard.text_field.TextField.update_ngrams">update_ngrams (keyboard.text_field.TextField attribute)</a>
-
-      <ul>
-        <li><a href="text_field.html#text_field.TextField.update_ngrams">(text_field.TextField attribute)</a>
 </li>
       </ul></li>
       <li><a href="keyboard.html#keyboard.text_field.TextField.update_suggestions">update_suggestions (keyboard.text_field.TextField attribute)</a>

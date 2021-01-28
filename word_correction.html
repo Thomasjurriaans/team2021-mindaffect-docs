@@ -102,8 +102,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="psychopy_modules.html">Psychopy-specific modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_keyboard_guide.html">Guide to creating custom JSON keyboards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new_languages_guide.html">Guide to adding new languages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="licenses.html">Licenses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
 
             
@@ -172,10 +172,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-word_correction">
-<span id="word-correction-py"></span><h1>word_correction.py<a class="headerlink" href="#module-word_correction" title="Permalink to this headline">¶</a></h1>
+<span id="word-correction-py"></span><span id="word-correction"></span><h1>word_correction.py<a class="headerlink" href="#module-word_correction" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="word_correction.WordCorrection">
-<em class="property">class </em><code class="sig-prename descclassname">word_correction.</code><code class="sig-name descname">WordCorrection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">settings_manager</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_correction.WordCorrection" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">word_correction.</code><code class="sig-name descname">WordCorrection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">settings_manager</span></em>, <em class="sig-param"><span class="n">edit_distance</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_correction.WordCorrection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides the ability to correct input.</p>
 <dl class="py method">
@@ -185,8 +185,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="word_correction.WordCorrection.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">word</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_correction.WordCorrection.predict" title="Permalink to this definition">¶</a></dt>
+<dt id="word_correction.WordCorrection.correct">
+<code class="sig-name descname">correct</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">word</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_correction.WordCorrection.correct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a correction of the word.</p>
 <blockquote>
 <div><dl class="simple">
@@ -200,43 +200,6 @@
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>string</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="word_correction.WordCorrection.correct">
-<code class="sig-name descname">correct</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sentence</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_correction.WordCorrection.correct" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a correction of a sentence.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>sentence</strong> (<em>concatenation of strings</em>) – The sentence to be corrected.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The corrected sentence.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>corrected_sentence (string)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="word_correction.WordCorrection.candidates">
-<code class="sig-name descname">candidates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">word</span></em>, <em class="sig-param"><span class="n">amount</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_correction.WordCorrection.candidates" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a list of word candidates.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>word</strong> (<em>string</em>) – The word to be corrected.</p></li>
-<li><p><strong>amount</strong> (<em>int</em>) – The amount of candidates to provide.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>List of words as predicted by the module.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>result (list of strings)</p>
 </dd>
 </dl>
 </dd></dl>

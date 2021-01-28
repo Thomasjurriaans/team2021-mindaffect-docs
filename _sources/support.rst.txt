@@ -1,9 +1,0 @@
-.. _support-page:
-
-Support
-=======
-
-This is where we put links for users in case they encounter problems.
-
-We could add a mailing adress but since we are probably not going to keep updating our code
-it might be best to just point to help or faq page (if we make one).

@@ -2,7 +2,6 @@ General Modules
 ===============
 
 .. toctree::
-   :caption: Contents:
 
    bci_keyboard
    create_ngram_file

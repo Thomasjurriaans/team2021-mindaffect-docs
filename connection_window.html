@@ -113,8 +113,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="psychopy_modules.html">Psychopy-specific modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_keyboard_guide.html">Guide to creating custom JSON keyboards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new_languages_guide.html">Guide to adding new languages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="licenses.html">Licenses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
 
             
@@ -368,13 +368,14 @@ failed connection, it will start the application with flickering disabled.</p>
 
 <dl class="py method">
 <dt id="windows.connection_window.ConnectionWindow.draw">
-<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.connection_window.ConnectionWindow.draw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em>, <em class="sig-param"><span class="n">target_idx</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.connection_window.ConnectionWindow.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decides per frame if a phase change should occur.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>noisetag</strong> (<em>Noisetag</em>) – Reference to the noisetag object</p></li>
 <li><p><strong>last_flip_time</strong> (<em>int</em>) – time of the last flip</p></li>
+<li><p><strong>target_idx</strong> (<em>int</em>) – (Optional) index of the target stimulus.</p></li>
 </ul>
 </dd>
 </dl>
@@ -408,6 +409,12 @@ Meant to run concurrently in order to not freeze up the application.</p>
 <dd class="field-odd"><p><strong>noisetag</strong> (<em>Noisetag</em>) – Reference to the noisetag object</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="windows.connection_window.ConnectionWindow.get_connection_status">
+<code class="sig-name descname">get_connection_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windows.connection_window.ConnectionWindow.get_connection_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the connection status of the noisetag</p>
 </dd></dl>
 
 </dd></dl>

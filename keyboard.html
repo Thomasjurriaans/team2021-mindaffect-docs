@@ -86,8 +86,8 @@
 <li class="toctree-l1"><a class="reference internal" href="general_modules.html">General Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="psychopy_modules.html">Psychopy-specific modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_keyboard_guide.html">Guide to creating custom JSON keyboards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new_languages_guide.html">Guide to adding new languages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="licenses.html">Licenses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
 
             
@@ -516,12 +516,6 @@ It contains the following functions:</p>
 <dd><p>Function to download dictionaries.</p>
 </dd></dl>
 
-<dl class="py function">
-<dt id="keyboard.dictionary_retrieval.generate">
-<code class="sig-prename descclassname">keyboard.dictionary_retrieval.</code><code class="sig-name descname">generate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">language</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.dictionary_retrieval.generate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generates .gz file from downloaded .txt file</p>
-</dd></dl>
-
 </div>
 <div class="section" id="module-keyboard.create_ngram_file">
 <span id="keyboard-create-ngram-file-module"></span><h2>keyboard.create_ngram_file module<a class="headerlink" href="#module-keyboard.create_ngram_file" title="Permalink to this headline">¶</a></h2>
@@ -554,6 +548,11 @@ If the output file already exists, it is loaded and updated with the specified f
 <em class="property">static </em><code class="sig-name descname">generate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.create_ngram_file.CreateNgramFile.generate" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is the only function in this script. It generates the n-gram frequency file according to the specified commandline arguments.</p>
 </dd></dl>
+
+<dl class="py method">
+<dt id="keyboard.create_ngram_file.CreateNgramFile.ensure_path">
+<em class="property">static </em><code class="sig-name descname">ensure_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.create_ngram_file.CreateNgramFile.ensure_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -992,7 +991,7 @@ from a JSON file. It contains all buttons the user wants to have on their keyboa
 
 <dl class="py method">
 <dt id="keyboard.windows.window.Window.draw">
-<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.window.Window.draw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em>, <em class="sig-param"><span class="n">target_idx</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.window.Window.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Changes the state of the buttons/keys within the Window.
 It draws the display with the colors given by the Noisetag module if flickering is active.</p>
 <dl class="field-list simple">
@@ -1000,6 +999,7 @@ It draws the display with the colors given by the Noisetag module if flickering 
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>noisetag</strong> (<em>noisetag.Noisetag</em>) – Reference to the Noisetag module from MindAffect.</p></li>
 <li><p><strong>last_flip_time</strong> (<em>int</em>) – Timestamp of last screen update, i.e. buffer flip.</p></li>
+<li><p><strong>target_idx</strong> (<em>int</em>) – (Optional) index of the target stimulus.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1109,7 +1109,7 @@ It draws the display with the colors given by the Noisetag module if flickering 
 
 <dl class="py method">
 <dt id="keyboard.windows.keyboard_window.KeyboardWindow.draw">
-<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.keyboard_window.KeyboardWindow.draw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em>, <em class="sig-param"><span class="n">target_idx</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.keyboard_window.KeyboardWindow.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Changes the state of the buttons/keys within the Window.
 It draws the display with the colors given by the Noisetag module if flickering is active.</p>
 <dl class="field-list simple">
@@ -1117,6 +1117,7 @@ It draws the display with the colors given by the Noisetag module if flickering 
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>noisetag</strong> (<em>noisetag.Noisetag</em>) – Reference to the Noisetag module from MindAffect.</p></li>
 <li><p><strong>last_flip_time</strong> (<em>int</em>) – Timestamp of last screen update, i.e. buffer flip.</p></li>
+<li><p><strong>target_idx</strong> (<em>int</em>) – (Optional) index of the target stimulus.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1258,7 +1259,7 @@ It draws the display with the colors given by the Noisetag module if flickering 
 
 <dl class="py method">
 <dt id="keyboard.windows.keypad_window.KeypadWindow.draw">
-<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">offset</span></em>, <em class="sig-param"><span class="n">stimulus_state</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.keypad_window.KeypadWindow.draw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">offset</span></em>, <em class="sig-param"><span class="n">stimulus_state</span></em>, <em class="sig-param"><span class="n">target_idx</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.keypad_window.KeypadWindow.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Colors all buttons of the keypad with with their respective stimulus state’s color.</p>
 </dd></dl>
 
@@ -1355,7 +1356,7 @@ It draws the display with the colors given by the Noisetag module if flickering 
 
 <dl class="py method">
 <dt id="keyboard.windows.menu_window.MenuWindow.draw">
-<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.menu_window.MenuWindow.draw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em>, <em class="sig-param"><span class="n">target_idx</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.menu_window.MenuWindow.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Changes the state of the buttons/keys within this Window.
 It draws the display with the colors given by the Noisetag module if flickering is active.</p>
 <dl class="field-list simple">
@@ -1363,6 +1364,7 @@ It draws the display with the colors given by the Noisetag module if flickering 
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>noisetag</strong> (<em>noisetag.Noisetag</em>) – Reference to the Noisetag module from MindAffect.</p></li>
 <li><p><strong>last_flip_time</strong> (<em>int</em>) – Timestamp of last screen update, i.e. buffer flip.</p></li>
+<li><p><strong>target_idx</strong> (<em>int</em>) – (Optional) index of the target stimulus.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1736,7 +1738,7 @@ It draws the display with the colors given by the Noisetag module if flickering 
 
 <dl class="py method">
 <dt id="keyboard.windows.electrode_quality_window.ElectrodeQualityWindow.draw">
-<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.electrode_quality_window.ElectrodeQualityWindow.draw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em>, <em class="sig-param"><span class="n">target_idx</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.electrode_quality_window.ElectrodeQualityWindow.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Changes the state of the buttons/keys within the Window.
 It draws the display with the colors given by the Noisetag module if flickering is active.</p>
 <dl class="field-list simple">
@@ -1744,6 +1746,7 @@ It draws the display with the colors given by the Noisetag module if flickering 
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>noisetag</strong> (<em>noisetag.Noisetag</em>) – Reference to the Noisetag module from MindAffect.</p></li>
 <li><p><strong>last_flip_time</strong> (<em>int</em>) – Timestamp of last screen update, i.e. buffer flip.</p></li>
+<li><p><strong>target_idx</strong> (<em>int</em>) – (Optional) index of the target stimulus.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2034,13 +2037,14 @@ It draws the display with the colors given by the Noisetag module if flickering 
 
 <dl class="py method">
 <dt id="keyboard.windows.calibration_window.CalibrationWindow.draw_flicker_frame">
-<code class="sig-name descname">draw_flicker_frame</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.calibration_window.CalibrationWindow.draw_flicker_frame" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw_flicker_frame</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em>, <em class="sig-param"><span class="n">target_idx</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.calibration_window.CalibrationWindow.draw_flicker_frame" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handles the rendering of the flickering when in calibration phase.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>noisetag</strong> (<em>noisetag.Noisetag</em>) – Reference to the Noisetag module from MindAffect.</p></li>
 <li><p><strong>last_flip_time</strong> (<em>int</em>) – Timestamp of last screen update, i.e. buffer flip.</p></li>
+<li><p><strong>target_idx</strong> (<em>int</em>) – (Optional) index of the target stimulus.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2074,7 +2078,7 @@ It draws the display with the colors given by the Noisetag module if flickering 
 </dl>
 <dl class="py class">
 <dt id="keyboard.windows.cued_prediction_window.CuedPredictionWindow">
-<em class="property">class </em><code class="sig-prename descclassname">keyboard.windows.cued_prediction_window.</code><code class="sig-name descname">CuedPredictionWindow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span></em>, <em class="sig-param"><span class="n">facade</span></em>, <em class="sig-param"><span class="n">style</span></em>, <em class="sig-param"><span class="n">calibration_config</span></em>, <em class="sig-param"><span class="n">use_flickering</span></em>, <em class="sig-param"><span class="n">settings_manager</span></em>, <em class="sig-param"><span class="n">noisetag</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.cued_prediction_window.CuedPredictionWindow" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">keyboard.windows.cued_prediction_window.</code><code class="sig-name descname">CuedPredictionWindow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span></em>, <em class="sig-param"><span class="n">facade</span></em>, <em class="sig-param"><span class="n">style</span></em>, <em class="sig-param"><span class="n">cued_prediction_config</span></em>, <em class="sig-param"><span class="n">use_flickering</span></em>, <em class="sig-param"><span class="n">settings_manager</span></em>, <em class="sig-param"><span class="n">noisetag</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.cued_prediction_window.CuedPredictionWindow" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#keyboard.windows.window.Window" title="keyboard.windows.window.Window"><code class="xref py py-class docutils literal notranslate"><span class="pre">keyboard.windows.window.Window</span></code></a></p>
 <p>Subclass of Window, designed for testing the calibration for EEG caps.
 Consists of 3 phases which can be traversed by any key on the physical keyboard:
@@ -2086,7 +2090,7 @@ Consists of 3 phases which can be traversed by any key on the physical keyboard:
 <dt>Args:</dt><dd><p>parent (windows.window.Window): The parent of this window.
 facade (framework_facade.FrameworkFacade): Contains the GUI specific functionality.
 style (dict): Style instructions for the keyboard.
-calibration_config (dict): Contains the calibration configurations.
+cued_prediction_config (dict): Contains the calibration configurations.
 settings_manager (settings_manager.SettingsManager): Object to handle access to settings.
 settings_manager (settings_manager.SettingsManager): Object to handle access to settings.
 noisetag (noisetag.Noisetag): Reference to the Noisetag module from MindAffect.</p>
@@ -2097,8 +2101,9 @@ style (dict): Style instructions for the keyboard.
 settings_manager (settings_manager.SettingsManager): Object to handle access to settings.
 settings_manager (settings_manager.SettingsManager): Object to handle access to settings.
 noisetag (noisetag.Noisetag): Reference to the Noisetag module from MindAffect.</p>
-<p>calibration_config (dict): Contains the calibration configurations.
+<p>cued_prediction_config (dict): Contains the cued prediction configurations.
 use_optometer (bool): Indicates whether to use the optometer.
+use_free_typing (bool): Indicates whether to use freetyping in the Noisetag, for testing
 state2color (dict): Mapping from states to RGB values.
 windows (dict): dictionary holding one KeypadWindow object containing all calibration keys.
 opto (Object): Framework dependent object for the optometer square.
@@ -2108,7 +2113,8 @@ current_phase (str): Name of the current phase.
 phase_links (dict): Mapping from phases to their next phase.
 instruction (Object): Framework dependent text object which holds the instruction.
 active_window (str): Name of the current active Window.
-switched_windows (bool): Indicates whether windows have been switched.</p>
+switched_windows (bool): Indicates whether windows have been switched.
+is_active (bool): Regulatory boolean to indicate if a window is active or not.</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -2128,7 +2134,7 @@ switched_windows (bool): Indicates whether windows have been switched.</p>
 <dl class="py method">
 <dt id="keyboard.windows.cued_prediction_window.CuedPredictionWindow.start_trials">
 <code class="sig-name descname">start_trials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.cued_prediction_window.CuedPredictionWindow.start_trials" title="Permalink to this definition">¶</a></dt>
-<dd><p>Starts a series of 10 cued prediction trials.</p>
+<dd><p>Starts a series of cued prediction trials.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2163,13 +2169,14 @@ Noisetag.</p>
 
 <dl class="py method">
 <dt id="keyboard.windows.cued_prediction_window.CuedPredictionWindow.draw">
-<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.cued_prediction_window.CuedPredictionWindow.draw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em>, <em class="sig-param"><span class="n">target_idx</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.cued_prediction_window.CuedPredictionWindow.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decides per frame if a phase change should occur and when to render flickering states.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>noisetag</strong> (<em>Noisetag</em>) – Reference to the noisetag object</p></li>
 <li><p><strong>last_flip_time</strong> (<em>int</em>) – time of the last flip</p></li>
+<li><p><strong>target_idx</strong> (<em>int</em>) – (Optional) index of the target stimulus.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2376,13 +2383,14 @@ failed connection, it will start the application with flickering disabled.</p>
 
 <dl class="py method">
 <dt id="keyboard.windows.connection_window.ConnectionWindow.draw">
-<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.connection_window.ConnectionWindow.draw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em>, <em class="sig-param"><span class="n">target_idx</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.connection_window.ConnectionWindow.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decides per frame if a phase change should occur.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>noisetag</strong> (<em>Noisetag</em>) – Reference to the noisetag object</p></li>
 <li><p><strong>last_flip_time</strong> (<em>int</em>) – time of the last flip</p></li>
+<li><p><strong>target_idx</strong> (<em>int</em>) – (Optional) index of the target stimulus.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2416,6 +2424,12 @@ Meant to run concurrently in order to not freeze up the application.</p>
 <dd class="field-odd"><p><strong>noisetag</strong> (<em>Noisetag</em>) – Reference to the noisetag object</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="keyboard.windows.connection_window.ConnectionWindow.get_connection_status">
+<code class="sig-name descname">get_connection_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.windows.connection_window.ConnectionWindow.get_connection_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the connection status of the noisetag</p>
 </dd></dl>
 
 </dd></dl>
@@ -2886,7 +2900,6 @@ smaller side of the key.</p>
 <li><p><strong>update_suggestions</strong> (<em>func</em>) – Outside function to update the suggestion keys.</p></li>
 <li><p><strong>max_history_store</strong> (<em>int</em>) – The max amount of historic lines to store.</p></li>
 <li><p><strong>max_history_show</strong> (<em>int</em>) – The max amount of historic lines to show. Keep low to not render out-of-screen text.</p></li>
-<li><p><strong>update_ngrams</strong> (<em>func</em>) – Outside function to update the n-gram frequency list based on the text typed so far.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2927,17 +2940,6 @@ smaller side of the key.</p>
 <dt id="keyboard.text_field.TextField.update_suggestions">
 <code class="sig-name descname">update_suggestions</code><a class="headerlink" href="#keyboard.text_field.TextField.update_suggestions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Outside function to update the suggestion keys.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>func</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="keyboard.text_field.TextField.update_ngrams">
-<code class="sig-name descname">update_ngrams</code><a class="headerlink" href="#keyboard.text_field.TextField.update_ngrams" title="Permalink to this definition">¶</a></dt>
-<dd><p>Outside function to update the n-gram frequency list based on the text typed so far.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>func</p>
@@ -3238,7 +3240,7 @@ If the service fails, the offline provider is used as a backup.</p>
 <span id="keyboard-word-correction-module"></span><h2>keyboard.word_correction module<a class="headerlink" href="#module-keyboard.word_correction" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="keyboard.word_correction.WordCorrection">
-<em class="property">class </em><code class="sig-prename descclassname">keyboard.word_correction.</code><code class="sig-name descname">WordCorrection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">settings_manager</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_correction.WordCorrection" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">keyboard.word_correction.</code><code class="sig-name descname">WordCorrection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">settings_manager</span></em>, <em class="sig-param"><span class="n">edit_distance</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_correction.WordCorrection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides the ability to correct input.</p>
 <dl class="py method">
@@ -3248,8 +3250,8 @@ If the service fails, the offline provider is used as a backup.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="keyboard.word_correction.WordCorrection.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">word</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_correction.WordCorrection.predict" title="Permalink to this definition">¶</a></dt>
+<dt id="keyboard.word_correction.WordCorrection.correct">
+<code class="sig-name descname">correct</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">word</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_correction.WordCorrection.correct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a correction of the word.</p>
 <blockquote>
 <div><dl class="simple">
@@ -3267,60 +3269,31 @@ If the service fails, the offline provider is used as a backup.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="keyboard.word_correction.WordCorrection.correct">
-<code class="sig-name descname">correct</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sentence</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_correction.WordCorrection.correct" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a correction of a sentence.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>sentence</strong> (<em>concatenation of strings</em>) – The sentence to be corrected.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The corrected sentence.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>corrected_sentence (string)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="keyboard.word_correction.WordCorrection.candidates">
-<code class="sig-name descname">candidates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">word</span></em>, <em class="sig-param"><span class="n">amount</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_correction.WordCorrection.candidates" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a list of word candidates.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>word</strong> (<em>string</em>) – The word to be corrected.</p></li>
-<li><p><strong>amount</strong> (<em>int</em>) – The amount of candidates to provide.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>List of words as predicted by the module.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>result (list of strings)</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </div>
 <div class="section" id="module-keyboard.word_pred">
 <span id="keyboard-word-pred-module"></span><h2>keyboard.word_pred module<a class="headerlink" href="#module-keyboard.word_pred" title="Permalink to this headline">¶</a></h2>
-<p>This module implements GPT2 for word autocompletion and prediction.</p>
+<p>This module uses an n-gram frequency list for word autocompletion and prediction.</p>
 <p>The module contains a single class <code class="docutils literal notranslate"><span class="pre">WordPred</span></code>.
 Make an instance of this class in order to use it.</p>
 <dl class="py class">
 <dt id="keyboard.word_pred.WordPred">
-<em class="property">class </em><code class="sig-prename descclassname">keyboard.word_pred.</code><code class="sig-name descname">WordPred</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">settings_manager</span></em>, <em class="sig-param"><span class="n">update_ngram_depth</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">use_gpt</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_pred.WordPred" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">keyboard.word_pred.</code><code class="sig-name descname">WordPred</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">settings_manager</span></em>, <em class="sig-param"><span class="n">update_ngram_depth</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_pred.WordPred" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This class autocompletes and predicts words</p>
 <dl class="py method">
-<dt id="keyboard.word_pred.WordPred.load_model">
-<code class="sig-name descname">load_model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_pred.WordPred.load_model" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load the GPT2 model to use for prediction and autocompletion.</p>
+<dt id="keyboard.word_pred.WordPred.load_ngrams">
+<em class="property">static </em><code class="sig-name descname">load_ngrams</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_pred.WordPred.load_ngrams" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the n-gram dictionary from the specified file. If it doesn’t exist, returns a new n-gram dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – The file path of the n-gram dictionary to load.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The n-gram dictionary.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -3332,7 +3305,7 @@ Make an instance of this class in order to use it.</p>
 <dl class="py method">
 <dt id="keyboard.word_pred.WordPred.update_frequencies">
 <code class="sig-name descname">update_frequencies</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_pred.WordPred.update_frequencies" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates the frequencies of n-grams in the n-grams file of the specified language.</p>
+<dd><p>Updates the frequencies of n-grams in the (user trained) n-grams file of the specified language.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>text</strong> – The text to update the n-gram frequency file with</p>
@@ -3342,32 +3315,15 @@ Make an instance of this class in order to use it.</p>
 
 <dl class="py method">
 <dt id="keyboard.word_pred.WordPred.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_pred.WordPred.predict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gives n predictions based on the specified text. Either GPT2 or n-gram frequencies are used.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>text</strong> (<em>str</em>) – The context to base the predictions on (default is “”)</p></li>
-<li><p><strong>n</strong> (<em>int</em>) – The amount of predictions to return (default is 3)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list of n predictions based on the specified context</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="keyboard.word_pred.WordPred.freq_predict">
-<code class="sig-name descname">freq_predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">front_ls</span></em>, <em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">depth</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">all</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_pred.WordPred.freq_predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">depth</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">all</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_pred.WordPred.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gives n predictions based on the context and the language’s n-gram frequency file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>front_ls</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – A list of words that specify the context</p></li>
-<li><p><strong>n</strong> (<em>int</em>) – The amount of predictions to return</p></li>
-<li><p><strong>depth</strong> (<em>int</em>) – The maximal n-gram size used for prediction (higher = more context used)</p></li>
-<li><p><strong>all</strong> (<em>bool</em>) – If true, instead of returning the best n predictions, it returns all predictions.</p></li>
+<li><p><strong>text</strong> (<em>str</em>) – The context to base the predictions on. (default is “”)</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – The amount of predictions to return. (default is 3)</p></li>
+<li><p><strong>depth</strong> (<em>int</em>) – The maximal n-gram size used for prediction. (higher = more context used) (default is 3)</p></li>
+<li><p><strong>all</strong> (<em>bool</em>) – If true, instead of returning the best n predictions, it returns all predictions. (default is False)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -3425,42 +3381,8 @@ Make an instance of this class in order to use it.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="keyboard.word_pred.WordPred.gpt_predict">
-<code class="sig-name descname">gpt_predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_pred.WordPred.gpt_predict" title="Permalink to this definition">¶</a></dt>
-<dd><p>“Predict <code class="docutils literal notranslate"><span class="pre">n</span></code> words given an already written text using the GPT2 model.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>text</strong> (<em>str</em>) – The already written text.</p></li>
-<li><p><strong>n</strong> (<em>int</em>) – How many words to return.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list of n words which are the next word suggestions for the given sentence.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt id="keyboard.word_pred.WordPred.autocomplete">
-<code class="sig-name descname">autocomplete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_pred.WordPred.autocomplete" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gives n autocomplete predictions based on the specified text. Either GPT2 or n-gram frequencies are used.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>text</strong> (<em>str</em>) – The context and partially typed word</p></li>
-<li><p><strong>n</strong> (<em>int</em>) – The amount of autocomplete predictions to return (default is 3)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list of n autocomplete predictions based on the specified text</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="keyboard.word_pred.WordPred.freq_autocomplete">
-<code class="sig-name descname">freq_autocomplete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_pred.WordPred.freq_autocomplete" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">autocomplete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_pred.WordPred.autocomplete" title="Permalink to this definition">¶</a></dt>
 <dd><p>Autocomplete words based on the specified language’s n-gram frequency file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -3471,22 +3393,6 @@ Make an instance of this class in order to use it.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A list of n words which are the autocompletion suggestions for the word.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="keyboard.word_pred.WordPred.gpt_autocomplete">
-<code class="sig-name descname">gpt_autocomplete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_pred.WordPred.gpt_autocomplete" title="Permalink to this definition">¶</a></dt>
-<dd><p>Autocomplete words using GPT2.</p>
-<p>It can only autocomplete if the word that is typed is also a prediction of the model.
-:param text: The already written text.
-:type text: str
-:param n: How many words to return.
-:type n: int</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A list of n words which are the autocompletion suggestions for the word.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3509,15 +3415,12 @@ Make an instance of this class in order to use it.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="keyboard.word_pred.WordPred.remove_last">
-<code class="sig-name descname">remove_last</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_pred.WordPred.remove_last" title="Permalink to this definition">¶</a></dt>
-<dd><p>Removes the last word from the specified string.</p>
+<dt id="keyboard.word_pred.WordPred.ensure_directory">
+<em class="property">static </em><code class="sig-name descname">ensure_directory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#keyboard.word_pred.WordPred.ensure_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether the specified directory exists. If not, it creates it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – The string to remove the last word from</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The string without the last word</p>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – The directory path to be checked.</p>
 </dd>
 </dl>
 </dd></dl>

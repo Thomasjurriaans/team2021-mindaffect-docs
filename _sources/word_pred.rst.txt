@@ -1,3 +1,5 @@
+.. _word_prediction:
+
 word_pred.py
 ==================
 

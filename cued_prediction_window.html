@@ -113,8 +113,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="psychopy_modules.html">Psychopy-specific modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_keyboard_guide.html">Guide to creating custom JSON keyboards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new_languages_guide.html">Guide to adding new languages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="licenses.html">Licenses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
 
             
@@ -197,7 +197,7 @@
 </dl>
 <dl class="py class">
 <dt id="windows.cued_prediction_window.CuedPredictionWindow">
-<em class="property">class </em><code class="sig-prename descclassname">windows.cued_prediction_window.</code><code class="sig-name descname">CuedPredictionWindow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span></em>, <em class="sig-param"><span class="n">facade</span></em>, <em class="sig-param"><span class="n">style</span></em>, <em class="sig-param"><span class="n">calibration_config</span></em>, <em class="sig-param"><span class="n">use_flickering</span></em>, <em class="sig-param"><span class="n">settings_manager</span></em>, <em class="sig-param"><span class="n">noisetag</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.cued_prediction_window.CuedPredictionWindow" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">windows.cued_prediction_window.</code><code class="sig-name descname">CuedPredictionWindow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span></em>, <em class="sig-param"><span class="n">facade</span></em>, <em class="sig-param"><span class="n">style</span></em>, <em class="sig-param"><span class="n">cued_prediction_config</span></em>, <em class="sig-param"><span class="n">use_flickering</span></em>, <em class="sig-param"><span class="n">settings_manager</span></em>, <em class="sig-param"><span class="n">noisetag</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.cued_prediction_window.CuedPredictionWindow" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="keyboard.html#keyboard.windows.window.Window" title="keyboard.windows.window.Window"><code class="xref py py-class docutils literal notranslate"><span class="pre">keyboard.windows.window.Window</span></code></a></p>
 <p>Subclass of Window, designed for testing the calibration for EEG caps.
 Consists of 3 phases which can be traversed by any key on the physical keyboard:
@@ -209,7 +209,7 @@ Consists of 3 phases which can be traversed by any key on the physical keyboard:
 <dt>Args:</dt><dd><p>parent (windows.window.Window): The parent of this window.
 facade (framework_facade.FrameworkFacade): Contains the GUI specific functionality.
 style (dict): Style instructions for the keyboard.
-calibration_config (dict): Contains the calibration configurations.
+cued_prediction_config (dict): Contains the calibration configurations.
 settings_manager (settings_manager.SettingsManager): Object to handle access to settings.
 settings_manager (settings_manager.SettingsManager): Object to handle access to settings.
 noisetag (noisetag.Noisetag): Reference to the Noisetag module from MindAffect.</p>
@@ -220,8 +220,9 @@ style (dict): Style instructions for the keyboard.
 settings_manager (settings_manager.SettingsManager): Object to handle access to settings.
 settings_manager (settings_manager.SettingsManager): Object to handle access to settings.
 noisetag (noisetag.Noisetag): Reference to the Noisetag module from MindAffect.</p>
-<p>calibration_config (dict): Contains the calibration configurations.
+<p>cued_prediction_config (dict): Contains the cued prediction configurations.
 use_optometer (bool): Indicates whether to use the optometer.
+use_free_typing (bool): Indicates whether to use freetyping in the Noisetag, for testing
 state2color (dict): Mapping from states to RGB values.
 windows (dict): dictionary holding one KeypadWindow object containing all calibration keys.
 opto (Object): Framework dependent object for the optometer square.
@@ -231,7 +232,8 @@ current_phase (str): Name of the current phase.
 phase_links (dict): Mapping from phases to their next phase.
 instruction (Object): Framework dependent text object which holds the instruction.
 active_window (str): Name of the current active Window.
-switched_windows (bool): Indicates whether windows have been switched.</p>
+switched_windows (bool): Indicates whether windows have been switched.
+is_active (bool): Regulatory boolean to indicate if a window is active or not.</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -251,7 +253,7 @@ switched_windows (bool): Indicates whether windows have been switched.</p>
 <dl class="py method">
 <dt id="windows.cued_prediction_window.CuedPredictionWindow.start_trials">
 <code class="sig-name descname">start_trials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windows.cued_prediction_window.CuedPredictionWindow.start_trials" title="Permalink to this definition">¶</a></dt>
-<dd><p>Starts a series of 10 cued prediction trials.</p>
+<dd><p>Starts a series of cued prediction trials.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -286,13 +288,14 @@ Noisetag.</p>
 
 <dl class="py method">
 <dt id="windows.cued_prediction_window.CuedPredictionWindow.draw">
-<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.cued_prediction_window.CuedPredictionWindow.draw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em>, <em class="sig-param"><span class="n">target_idx</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.cued_prediction_window.CuedPredictionWindow.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decides per frame if a phase change should occur and when to render flickering states.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>noisetag</strong> (<em>Noisetag</em>) – Reference to the noisetag object</p></li>
 <li><p><strong>last_flip_time</strong> (<em>int</em>) – time of the last flip</p></li>
+<li><p><strong>target_idx</strong> (<em>int</em>) – (Optional) index of the target stimulus.</p></li>
 </ul>
 </dd>
 </dl>

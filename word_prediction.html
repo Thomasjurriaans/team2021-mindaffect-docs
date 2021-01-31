@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>word_pred.py &mdash; team2021-mindaffect 0.1 documentation</title>
+  <title>word_prediction.py &mdash; team2021-mindaffect 0.1 documentation</title>
   
 
   
@@ -84,26 +84,30 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Complete BCI spelling system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation &amp; Usage</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="general_modules.html">General Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="app_exceptions.html">app_exceptions.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bci_keyboard.html">bci_keyboard.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_ngram_file.html">create_ngram_file.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionary_retrieval.html">dictionary_retrieval.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="framework_facade.html">framework_facade.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functional_provider.html">functional_provider.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="key.html">key.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="key_type.html">key_type.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="keyboard_loader.html">keyboard_loader.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings_manager.html">settings_manager.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_field.html">text_field.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tts.html">tts.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_to_speech.html">text_to_speech.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="word_correction.html">word_correction.py</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">word_pred.py</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">word_prediction.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="window_modules.html">Window Modules</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="psychopy_modules.html">Psychopy-specific modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_keyboard_guide.html">Guide to creating custom JSON keyboards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="new_languages_guide.html">Guide to adding new languages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="licenses.html">Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
             
@@ -152,13 +156,13 @@
         
           <li><a href="general_modules.html">General Modules</a> &raquo;</li>
         
-      <li>word_pred.py</li>
+      <li>word_prediction.py</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/word_pred.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/word_prediction.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -171,19 +175,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-word_pred">
-<span id="word-pred-py"></span><span id="word-prediction"></span><h1>word_pred.py<a class="headerlink" href="#module-word_pred" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-word_prediction">
+<span id="word-prediction-py"></span><span id="word-prediction"></span><h1>word_prediction.py<a class="headerlink" href="#module-word_prediction" title="Permalink to this headline">¶</a></h1>
 <p>This module uses an n-gram frequency list for word autocompletion and prediction.</p>
-<p>The module contains a single class <code class="docutils literal notranslate"><span class="pre">WordPred</span></code>.
+<p>The module contains a single class <code class="docutils literal notranslate"><span class="pre">WordPrediction</span></code>.
 Make an instance of this class in order to use it.</p>
 <dl class="py class">
-<dt id="word_pred.WordPred">
-<em class="property">class </em><code class="sig-prename descclassname">word_pred.</code><code class="sig-name descname">WordPred</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">settings_manager</span></em>, <em class="sig-param"><span class="n">update_ngram_depth</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_pred.WordPred" title="Permalink to this definition">¶</a></dt>
+<dt id="word_prediction.WordPrediction">
+<em class="property">class </em><code class="sig-prename descclassname">word_prediction.</code><code class="sig-name descname">WordPrediction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">update_ngram_depth</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_prediction.WordPrediction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This class autocompletes and predicts words</p>
 <dl class="py method">
-<dt id="word_pred.WordPred.load_ngrams">
-<em class="property">static </em><code class="sig-name descname">load_ngrams</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_pred.WordPred.load_ngrams" title="Permalink to this definition">¶</a></dt>
+<dt id="word_prediction.WordPrediction.get_instance">
+<em class="property">static </em><code class="sig-name descname">get_instance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">update_ngram_depth</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_prediction.WordPrediction.get_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Static access method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="word_prediction.WordPrediction.load_ngrams">
+<em class="property">static </em><code class="sig-name descname">load_ngrams</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_prediction.WordPrediction.load_ngrams" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads the n-gram dictionary from the specified file. If it doesn’t exist, returns a new n-gram dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -196,14 +206,14 @@ Make an instance of this class in order to use it.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="word_pred.WordPred.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#word_pred.WordPred.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates the language at use.</p>
+<dt id="word_prediction.WordPrediction.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#word_prediction.WordPrediction.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the language at use if it has been changed.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="word_pred.WordPred.update_frequencies">
-<code class="sig-name descname">update_frequencies</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_pred.WordPred.update_frequencies" title="Permalink to this definition">¶</a></dt>
+<dt id="word_prediction.WordPrediction.update_frequencies">
+<code class="sig-name descname">update_frequencies</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_prediction.WordPrediction.update_frequencies" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates the frequencies of n-grams in the (user trained) n-grams file of the specified language.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -213,8 +223,8 @@ Make an instance of this class in order to use it.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="word_pred.WordPred.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">depth</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">all</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_pred.WordPred.predict" title="Permalink to this definition">¶</a></dt>
+<dt id="word_prediction.WordPrediction.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">depth</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">all</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_prediction.WordPrediction.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gives n predictions based on the context and the language’s n-gram frequency file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -232,8 +242,8 @@ Make an instance of this class in order to use it.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="word_pred.WordPred.get_predictions">
-<code class="sig-name descname">get_predictions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">front</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_pred.WordPred.get_predictions" title="Permalink to this definition">¶</a></dt>
+<dt id="word_prediction.WordPrediction.get_predictions">
+<code class="sig-name descname">get_predictions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">front</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_prediction.WordPrediction.get_predictions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves the predictions and their frequencies based on the frequency file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -246,8 +256,8 @@ Make an instance of this class in order to use it.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="word_pred.WordPred.get_probability">
-<code class="sig-name descname">get_probability</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">front</span></em>, <em class="sig-param"><span class="n">back</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_pred.WordPred.get_probability" title="Permalink to this definition">¶</a></dt>
+<dt id="word_prediction.WordPrediction.get_probability">
+<code class="sig-name descname">get_probability</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">front</span></em>, <em class="sig-param"><span class="n">back</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_prediction.WordPrediction.get_probability" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the normalized frequency of the prediction <code class="docutils literal notranslate"><span class="pre">back</span></code> given context <code class="docutils literal notranslate"><span class="pre">front</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -263,8 +273,8 @@ Make an instance of this class in order to use it.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="word_pred.WordPred.remove_first_duplicates">
-<code class="sig-name descname">remove_first_duplicates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ls</span></em>, <em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_pred.WordPred.remove_first_duplicates" title="Permalink to this definition">¶</a></dt>
+<dt id="word_prediction.WordPrediction.remove_first_duplicates">
+<code class="sig-name descname">remove_first_duplicates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ls</span></em>, <em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_prediction.WordPrediction.remove_first_duplicates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes the duplicates from the first n elements in the list so it can be used as prediction suggestions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -280,8 +290,8 @@ Make an instance of this class in order to use it.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="word_pred.WordPred.autocomplete">
-<code class="sig-name descname">autocomplete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_pred.WordPred.autocomplete" title="Permalink to this definition">¶</a></dt>
+<dt id="word_prediction.WordPrediction.autocomplete">
+<code class="sig-name descname">autocomplete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_prediction.WordPrediction.autocomplete" title="Permalink to this definition">¶</a></dt>
 <dd><p>Autocomplete words based on the specified language’s n-gram frequency file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -297,8 +307,8 @@ Make an instance of this class in order to use it.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="word_pred.WordPred.copy_capitalization">
-<code class="sig-name descname">copy_capitalization</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">word</span></em>, <em class="sig-param"><span class="n">words</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_pred.WordPred.copy_capitalization" title="Permalink to this definition">¶</a></dt>
+<dt id="word_prediction.WordPrediction.copy_capitalization">
+<code class="sig-name descname">copy_capitalization</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">word</span></em>, <em class="sig-param"><span class="n">words</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_prediction.WordPrediction.copy_capitalization" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copies capitalization from ‘word’ to the words in list ‘words’.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -314,8 +324,8 @@ Make an instance of this class in order to use it.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="word_pred.WordPred.ensure_directory">
-<em class="property">static </em><code class="sig-name descname">ensure_directory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_pred.WordPred.ensure_directory" title="Permalink to this definition">¶</a></dt>
+<dt id="word_prediction.WordPrediction.ensure_directory">
+<em class="property">static </em><code class="sig-name descname">ensure_directory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#word_prediction.WordPrediction.ensure_directory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks whether the specified directory exists. If not, it creates it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

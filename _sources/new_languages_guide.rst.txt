@@ -7,14 +7,14 @@ New languages can be added to be used in the keyboard. For examples, you can ref
 
 Replace LANGUAGE KEY with the code of your language e.g. 'EN' and LANGUAGE with the language e.g. ENGLISH
 
-buttons
+Buttons
 -------
 1. In :ref:`key-type` add a toggle key named  as ``TOGGLE_ON_LANGUAGE_KEY = (ToggleFunction(link="language", mode="LANGUAGE KEY"), False)``
 2. In `keyboard_config.json` add the button under "Set language" as ``["TOGGLE_ON_LANGUAGE_KEY","LANGUAGE KEY"]``
 
 Correction
 ----------
-The program will download a frequency list for the language if available that will help with word correction.
+If there is an internet connection and online frequency list available for the chosen language, the program will automatically download it. 
 
 Prediction
 ----------

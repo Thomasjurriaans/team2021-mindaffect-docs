@@ -1,24 +1,15 @@
 .. _install:
 
-Installation
-============
+Installation & Usage
+=====================
 
-Instructions on how to install our module.
-
-Something like
-
-.. code-block:: python
-
-   pip install team2021-mindaffect
-
-.. note:: It will probably just be part of the pymindaffectbci module.
-
+To use the keyboard, run the `bci_keyboard.py` file.
 
 Requirements
 ------------
-Our keyboard implementation is based on the `mindaffectbci module
+This keyboard implementation is based on the `mindaffectbci module
 <https://pypi.org/project/mindaffectBCI/>`_ developed by `MindAffect
-<https://www.mindaffect.nl/>`_ so this should be installed.
+<https://www.mindaffect.nl/>`_ so it should be installed.
 
 .. code-block:: python
 
@@ -30,13 +21,9 @@ The required packages can be found in requirements.txt and installed as follows.
 
    pip install -r requirements.txt
 
-We recommend using Python version 3.8
+**We recommend using Python version 3.8**
 
 Problems
 --------
 First check if your Python version is not outdated and if all the required packages have
 been installed correctly (see Requirements).
-
-Add help here for possible problems that may arise with installation.
-
-See our :ref:`support-page` section for further information.

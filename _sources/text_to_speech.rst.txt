@@ -1,9 +1,9 @@
 .. _text_to_speech:
 
-tts.py
-=======================
+text_to_speech.py
+=================
 
-.. automodule:: tts
+.. automodule:: text_to_speech
    :members:
    :undoc-members:
    :show-inheritance:

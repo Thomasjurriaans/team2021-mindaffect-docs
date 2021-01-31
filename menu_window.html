@@ -84,29 +84,34 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Complete BCI spelling system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation &amp; Usage</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="general_modules.html">General Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="app_exceptions.html">app_exceptions.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bci_keyboard.html">bci_keyboard.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_ngram_file.html">create_ngram_file.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionary_retrieval.html">dictionary_retrieval.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="framework_facade.html">framework_facade.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functional_provider.html">functional_provider.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="key.html">key.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="key_type.html">key_type.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="keyboard_loader.html">keyboard_loader.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings_manager.html">settings_manager.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_field.html">text_field.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tts.html">tts.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_to_speech.html">text_to_speech.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="word_correction.html">word_correction.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="word_pred.html">word_pred.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="word_prediction.html">word_prediction.py</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="window_modules.html">Window Modules</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="window.html">window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calibration_reset_window.html">calibration_reset_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calibration_window.html">calibration_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="connection_window.html">connection_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cued_prediction_window.html">cued_prediction_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="electrode_quality_window.html">electrode_quality_window.py</a></li>
 <li class="toctree-l3"><a class="reference internal" href="keyboard_window.html">keyboard_window.py</a></li>
 <li class="toctree-l3"><a class="reference internal" href="keypad_window.html">keypad_window.py</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">menu_window.py</a></li>
 <li class="toctree-l3"><a class="reference internal" href="submenu_window.html">submenu_window.py</a></li>
-<li class="toctree-l3"><a class="reference internal" href="calibration_window.html">calibration_window.py</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cued_prediction_window.html">cued_prediction_window.py</a></li>
-<li class="toctree-l3"><a class="reference internal" href="electrode_quality_window.html">electrode_quality_window.py</a></li>
-<li class="toctree-l3"><a class="reference internal" href="connection_window.html">connection_window.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="window.html">window.py</a></li>
 </ul>
 </li>
 </ul>
@@ -114,7 +119,7 @@
 <li class="toctree-l1"><a class="reference internal" href="psychopy_modules.html">Psychopy-specific modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_keyboard_guide.html">Guide to creating custom JSON keyboards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="new_languages_guide.html">Guide to adding new languages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="licenses.html">Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
             
@@ -196,8 +201,8 @@
 </dl>
 <dl class="py class">
 <dt id="windows.menu_window.MenuWindow">
-<em class="property">class </em><code class="sig-prename descclassname">windows.menu_window.</code><code class="sig-name descname">MenuWindow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span></em>, <em class="sig-param"><span class="n">facade</span></em>, <em class="sig-param"><span class="n">style</span></em>, <em class="sig-param"><span class="n">menu_config</span></em>, <em class="sig-param"><span class="n">use_flickering</span></em>, <em class="sig-param"><span class="n">settings_manager</span></em>, <em class="sig-param"><span class="n">noisetag</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.menu_window.MenuWindow" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="keyboard.html#keyboard.windows.window.Window" title="keyboard.windows.window.Window"><code class="xref py py-class docutils literal notranslate"><span class="pre">keyboard.windows.window.Window</span></code></a></p>
+<em class="property">class </em><code class="sig-prename descclassname">windows.menu_window.</code><code class="sig-name descname">MenuWindow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span></em>, <em class="sig-param"><span class="n">facade</span></em>, <em class="sig-param"><span class="n">style</span></em>, <em class="sig-param"><span class="n">menu_config</span></em>, <em class="sig-param"><span class="n">use_flickering</span></em>, <em class="sig-param"><span class="n">noisetag</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.menu_window.MenuWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">keyboard.windows.window.Window</span></code></p>
 <p>A Window representing a menu.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -207,7 +212,6 @@
 <li><p><strong>style</strong> (<em>dict</em>) – A dictionary containing configurable style settings.</p></li>
 <li><p><strong>menu_config</strong> (<em>dict</em>) – Configuration for the menu.</p></li>
 <li><p><strong>use_flickering</strong> (<em>bool</em>) – A boolean indicating whether or not to use flickering.</p></li>
-<li><p><strong>settings_manager</strong> (<em>settings_manager.SettingsManager</em>) – Object to handle access to settings.</p></li>
 <li><p><strong>noisetag</strong> (<em>noisetag.Noisetag</em>) – Reference to the Noisetag module from MindAffect.</p></li>
 </ul>
 </dd>
@@ -282,14 +286,11 @@ It draws the display with the colors given by the Noisetag module if flickering 
 
 <dl class="py method">
 <dt id="windows.menu_window.MenuWindow.build_navigation_bar">
-<code class="sig-name descname">build_navigation_bar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">navigation_layout</span></em>, <em class="sig-param"><span class="n">settings_manager</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.menu_window.MenuWindow.build_navigation_bar" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">build_navigation_bar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">navigation_layout</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.menu_window.MenuWindow.build_navigation_bar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Builds navigation keys.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>navigation_layout</strong> (<em>list</em>) – Layout of the navigation keys.</p></li>
-<li><p><strong>settings_manager</strong> (<em>SettingsManager</em>) – The settings manager to be passed to the keys.</p></li>
-</ul>
+<dd class="field-odd"><p><strong>navigation_layout</strong> (<em>list</em>) – Layout of the navigation keys.</p>
 </dd>
 </dl>
 </dd></dl>

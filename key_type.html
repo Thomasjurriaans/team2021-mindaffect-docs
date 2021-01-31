@@ -84,26 +84,30 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Complete BCI spelling system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation &amp; Usage</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="general_modules.html">General Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="app_exceptions.html">app_exceptions.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bci_keyboard.html">bci_keyboard.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_ngram_file.html">create_ngram_file.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionary_retrieval.html">dictionary_retrieval.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="framework_facade.html">framework_facade.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functional_provider.html">functional_provider.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="key.html">key.py</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">key_type.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="keyboard_loader.html">keyboard_loader.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings_manager.html">settings_manager.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_field.html">text_field.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tts.html">tts.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_to_speech.html">text_to_speech.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="word_correction.html">word_correction.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="word_pred.html">word_pred.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="word_prediction.html">word_prediction.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="window_modules.html">Window Modules</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="psychopy_modules.html">Psychopy-specific modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_keyboard_guide.html">Guide to creating custom JSON keyboards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="new_languages_guide.html">Guide to adding new languages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="licenses.html">Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
             
@@ -181,7 +185,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>func_provider</strong> (<em>FunctionalProvider</em>) – The functionality of a key type.</p></li>
+<li><p><strong>func_provider</strong> (<a class="reference internal" href="functional_provider.html#functional_provider.FunctionalProvider" title="functional_provider.FunctionalProvider"><em>FunctionalProvider</em></a>) – The functionality of a key type.</p></li>
 <li><p><strong>has_icon</strong> (<em>bool</em>) – Whether a key is loaded in with an icon instead of a label text.</p></li>
 </ul>
 </dd>
@@ -272,23 +276,13 @@
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="key_type.KeyType.TOGGLE_ON_WORD_PREDICTION_KEY">
-<code class="sig-name descname">TOGGLE_ON_WORD_PREDICTION_KEY</code><em class="property"> = (&lt;keyboard.functional_provider.ToggleFunction object&gt;, False)</em><a class="headerlink" href="#key_type.KeyType.TOGGLE_ON_WORD_PREDICTION_KEY" title="Permalink to this definition">¶</a></dt>
+<dt id="key_type.KeyType.TOGGLE_ON_WORD_PREDICTION_CORRECTION_KEY">
+<code class="sig-name descname">TOGGLE_ON_WORD_PREDICTION_CORRECTION_KEY</code><em class="property"> = (&lt;keyboard.functional_provider.ToggleFunction object&gt;, False)</em><a class="headerlink" href="#key_type.KeyType.TOGGLE_ON_WORD_PREDICTION_CORRECTION_KEY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="key_type.KeyType.TOGGLE_OFF_WORD_PREDICTION_KEY">
-<code class="sig-name descname">TOGGLE_OFF_WORD_PREDICTION_KEY</code><em class="property"> = (&lt;keyboard.functional_provider.ToggleFunction object&gt;, False)</em><a class="headerlink" href="#key_type.KeyType.TOGGLE_OFF_WORD_PREDICTION_KEY" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="key_type.KeyType.TOGGLE_ON_WORD_CORRECTION_KEY">
-<code class="sig-name descname">TOGGLE_ON_WORD_CORRECTION_KEY</code><em class="property"> = (&lt;keyboard.functional_provider.ToggleFunction object&gt;, False)</em><a class="headerlink" href="#key_type.KeyType.TOGGLE_ON_WORD_CORRECTION_KEY" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="key_type.KeyType.TOGGLE_OFF_WORD_CORRECTION_KEY">
-<code class="sig-name descname">TOGGLE_OFF_WORD_CORRECTION_KEY</code><em class="property"> = (&lt;keyboard.functional_provider.ToggleFunction object&gt;, False)</em><a class="headerlink" href="#key_type.KeyType.TOGGLE_OFF_WORD_CORRECTION_KEY" title="Permalink to this definition">¶</a></dt>
+<dt id="key_type.KeyType.TOGGLE_OFF_WORD_PREDICTION_CORRECTION_KEY">
+<code class="sig-name descname">TOGGLE_OFF_WORD_PREDICTION_CORRECTION_KEY</code><em class="property"> = (&lt;keyboard.functional_provider.ToggleFunction object&gt;, False)</em><a class="headerlink" href="#key_type.KeyType.TOGGLE_OFF_WORD_PREDICTION_CORRECTION_KEY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -309,11 +303,6 @@
 <dl class="py attribute">
 <dt id="key_type.KeyType.SAVE_TEXT_KEY">
 <code class="sig-name descname">SAVE_TEXT_KEY</code><em class="property"> = (&lt;keyboard.functional_provider.SaveTextFunction object&gt;, False)</em><a class="headerlink" href="#key_type.KeyType.SAVE_TEXT_KEY" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="key_type.KeyType.LOAD_TEXT_KEY">
-<code class="sig-name descname">LOAD_TEXT_KEY</code><em class="property"> = (&lt;keyboard.functional_provider.LoadTextFunction object&gt;, False)</em><a class="headerlink" href="#key_type.KeyType.LOAD_TEXT_KEY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -339,6 +328,11 @@
 <dl class="py attribute">
 <dt id="key_type.KeyType.SWITCH_TO_CALIBRATION_KEY">
 <code class="sig-name descname">SWITCH_TO_CALIBRATION_KEY</code><em class="property"> = (&lt;keyboard.functional_provider.SwitchWindowFunction object&gt;, False)</em><a class="headerlink" href="#key_type.KeyType.SWITCH_TO_CALIBRATION_KEY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="key_type.KeyType.RESET_CALIBRATION">
+<code class="sig-name descname">RESET_CALIBRATION</code><em class="property"> = (&lt;keyboard.functional_provider.SwitchWindowFunction object&gt;, False)</em><a class="headerlink" href="#key_type.KeyType.RESET_CALIBRATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">

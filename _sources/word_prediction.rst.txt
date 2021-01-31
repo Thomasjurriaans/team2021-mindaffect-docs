@@ -1,9 +1,9 @@
 .. _word_prediction:
 
-word_pred.py
+word_prediction.py
 ==================
 
-.. automodule:: word_pred
+.. automodule:: word_prediction
    :members:
    :undoc-members:
    :show-inheritance:

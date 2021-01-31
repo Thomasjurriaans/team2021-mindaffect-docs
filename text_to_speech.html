@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tts.py &mdash; team2021-mindaffect 0.1 documentation</title>
+  <title>text_to_speech.py &mdash; team2021-mindaffect 0.1 documentation</title>
   
 
   
@@ -84,26 +84,30 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Complete BCI spelling system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation &amp; Usage</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="general_modules.html">General Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="app_exceptions.html">app_exceptions.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bci_keyboard.html">bci_keyboard.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_ngram_file.html">create_ngram_file.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionary_retrieval.html">dictionary_retrieval.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="framework_facade.html">framework_facade.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functional_provider.html">functional_provider.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="key.html">key.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="key_type.html">key_type.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="keyboard_loader.html">keyboard_loader.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings_manager.html">settings_manager.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_field.html">text_field.py</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">tts.py</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">text_to_speech.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="word_correction.html">word_correction.py</a></li>
-<li class="toctree-l2"><a class="reference internal" href="word_pred.html">word_pred.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="word_prediction.html">word_prediction.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="window_modules.html">Window Modules</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="psychopy_modules.html">Psychopy-specific modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_keyboard_guide.html">Guide to creating custom JSON keyboards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="new_languages_guide.html">Guide to adding new languages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="licenses.html">Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
             
@@ -152,13 +156,13 @@
         
           <li><a href="general_modules.html">General Modules</a> &raquo;</li>
         
-      <li>tts.py</li>
+      <li>text_to_speech.py</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/tts.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/text_to_speech.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -171,17 +175,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-tts">
-<span id="tts-py"></span><span id="text-to-speech"></span><h1>tts.py<a class="headerlink" href="#module-tts" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-text_to_speech">
+<span id="text-to-speech-py"></span><span id="text-to-speech"></span><h1>text_to_speech.py<a class="headerlink" href="#module-text_to_speech" title="Permalink to this headline">¶</a></h1>
 <p>This module is used to convert text into speech.</p>
-<p>The module contains a single class <code class="docutils literal notranslate"><span class="pre">Engine</span></code>.</p>
+<p>The module contains a single class <code class="docutils literal notranslate"><span class="pre">TextToSpeech</span></code>.</p>
 <p><strong>Usage example</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tts</span>
-<span class="n">tts</span> <span class="o">=</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">tts</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span><span class="n">connection_timeout</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">lang_tag</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="n">service</span><span class="o">=</span><span class="s1">&#39;free_online&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">text_to_speech</span>
+<span class="n">tts</span> <span class="o">=</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">text_to_speech</span><span class="o">.</span><span class="n">TextToSpeech</span><span class="p">(</span><span class="n">connection_timeout</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">lang_tag</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="n">service</span><span class="o">=</span><span class="s1">&#39;free_online&#39;</span><span class="p">)</span>
 <span class="n">tts</span><span class="o">.</span><span class="n">speak</span><span class="p">(</span><span class="s2">&quot;testing testing 123&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">Engine</span></code> supports 3 different types of TTS services:</p>
+<p><code class="docutils literal notranslate"><span class="pre">TextToSpeech</span></code> supports 3 different types of TTS services:</p>
 <dl class="simple">
 <dt><strong>Free offline (pyttsx3)</strong></dt><dd><ul class="simple">
 <li><p><cite>+</cite> Very low latency</p></li>
@@ -213,8 +217,8 @@ The JSON file containing the credentials should be named <code class="docutils l
 <p>The language the TTS service should use is indicated with an IETF language tag.
 A list of these tags can be found <a class="reference external" href="https://gtts.readthedocs.io/en/latest/_modules/gtts/lang.html">here.</a></p>
 <dl class="py class">
-<dt id="tts.Engine">
-<em class="property">class </em><code class="sig-prename descclassname">tts.</code><code class="sig-name descname">Engine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">settings_manager</span></em>, <em class="sig-param"><span class="n">connection_timeout</span><span class="o">=</span><span class="default_value">0.3</span></em>, <em class="sig-param"><span class="n">service</span><span class="o">=</span><span class="default_value">'free_online'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tts.Engine" title="Permalink to this definition">¶</a></dt>
+<dt id="text_to_speech.TextToSpeech">
+<em class="property">class </em><code class="sig-prename descclassname">text_to_speech.</code><code class="sig-name descname">TextToSpeech</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">connection_timeout</span><span class="o">=</span><span class="default_value">0.3</span></em>, <em class="sig-param"><span class="n">service</span><span class="o">=</span><span class="default_value">'free_online'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_to_speech.TextToSpeech" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Implements different TTS services to turn text into speech.</p>
 <p>The argument <code class="docutils literal notranslate"><span class="pre">service</span></code> determines which TTS provider is used.
@@ -223,26 +227,25 @@ If the service fails, the offline provider is used as a backup.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>connection_timeout</strong> (<em>float</em><em>, </em><em>optional</em>) – slowest allowed connection speed in seconds.</p></li>
-<li><p><strong>settings_manager</strong> (<em>SettingsManager</em>) – The settings manager which notifies this class when language is changed.</p></li>
 <li><p><strong>service</strong> (<em>str</em><em>, </em><em>optional</em>) – which TTS service to prefer. options: <code class="docutils literal notranslate"><span class="pre">paid_online</span></code>, <code class="docutils literal notranslate"><span class="pre">free_online</span></code>, <code class="docutils literal notranslate"><span class="pre">offline</span></code></p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="tts.Engine.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tts.Engine.update" title="Permalink to this definition">¶</a></dt>
+<dt id="text_to_speech.TextToSpeech.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#text_to_speech.TextToSpeech.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates the language at use.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="tts.Engine.determine_service">
-<code class="sig-name descname">determine_service</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tts.Engine.determine_service" title="Permalink to this definition">¶</a></dt>
+<dt id="text_to_speech.TextToSpeech.determine_service">
+<code class="sig-name descname">determine_service</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#text_to_speech.TextToSpeech.determine_service" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determines which TTS service is used, bases on preference and whether or not an internet connection is available or not.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="tts.Engine.speak_threaded">
-<code class="sig-name descname">speak_threaded</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tts.Engine.speak_threaded" title="Permalink to this definition">¶</a></dt>
+<dt id="text_to_speech.TextToSpeech.speak_threaded">
+<code class="sig-name descname">speak_threaded</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_to_speech.TextToSpeech.speak_threaded" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls the <cite>speak</cite> function with a seperate thread.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -252,8 +255,8 @@ If the service fails, the offline provider is used as a backup.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="tts.Engine.speak">
-<code class="sig-name descname">speak</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tts.Engine.speak" title="Permalink to this definition">¶</a></dt>
+<dt id="text_to_speech.TextToSpeech.speak">
+<code class="sig-name descname">speak</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_to_speech.TextToSpeech.speak" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decides on which TTS service to use, which language to speak, and plays the audio.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -263,8 +266,8 @@ If the service fails, the offline provider is used as a backup.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="tts.Engine.say_paid_online">
-<code class="sig-name descname">say_paid_online</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tts.Engine.say_paid_online" title="Permalink to this definition">¶</a></dt>
+<dt id="text_to_speech.TextToSpeech.say_paid_online">
+<code class="sig-name descname">say_paid_online</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_to_speech.TextToSpeech.say_paid_online" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uses Google Cloud WaveNet voice to speak the message.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -274,8 +277,8 @@ If the service fails, the offline provider is used as a backup.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="tts.Engine.say_free_online">
-<code class="sig-name descname">say_free_online</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tts.Engine.say_free_online" title="Permalink to this definition">¶</a></dt>
+<dt id="text_to_speech.TextToSpeech.say_free_online">
+<code class="sig-name descname">say_free_online</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_to_speech.TextToSpeech.say_free_online" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uses <code class="docutils literal notranslate"><span class="pre">gTTS</span></code> to speak a given message.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -285,8 +288,8 @@ If the service fails, the offline provider is used as a backup.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="tts.Engine.say_offline">
-<code class="sig-name descname">say_offline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tts.Engine.say_offline" title="Permalink to this definition">¶</a></dt>
+<dt id="text_to_speech.TextToSpeech.say_offline">
+<code class="sig-name descname">say_offline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_to_speech.TextToSpeech.say_offline" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uses <code class="docutils literal notranslate"><span class="pre">pyttsx3</span></code>  to speak a given message.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -296,8 +299,8 @@ If the service fails, the offline provider is used as a backup.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="tts.Engine.is_online">
-<code class="sig-name descname">is_online</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tts.Engine.is_online" title="Permalink to this definition">¶</a></dt>
+<dt id="text_to_speech.TextToSpeech.is_online">
+<code class="sig-name descname">is_online</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#text_to_speech.TextToSpeech.is_online" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if there is an internet connection available with sufficiently low ping.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>

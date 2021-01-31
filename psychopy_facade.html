@@ -84,7 +84,8 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Complete BCI spelling system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation &amp; Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general_modules.html">General Modules</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="psychopy_modules.html">Psychopy-specific modules</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">psychopy_facade.py</a></li>
@@ -92,7 +93,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="custom_keyboard_guide.html">Guide to creating custom JSON keyboards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="new_languages_guide.html">Guide to adding new languages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="licenses.html">Licenses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
             
@@ -167,7 +168,7 @@
 <dl class="py class">
 <dt id="psychopy_facade.PsychopyFacade">
 <em class="property">class </em><code class="sig-prename descclassname">psychopy_facade.</code><code class="sig-name descname">PsychopyFacade</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">size</span></em>, <em class="sig-param"><span class="n">full_screen</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_facade.PsychopyFacade" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="keyboard.html#keyboard.framework_facade.FrameworkFacade" title="keyboard.framework_facade.FrameworkFacade"><code class="xref py py-class docutils literal notranslate"><span class="pre">keyboard.framework_facade.FrameworkFacade</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">keyboard.framework_facade.FrameworkFacade</span></code></p>
 <p>Implements the psychopy functionality into the facade.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -261,14 +262,15 @@ representing the button and its label or icon respectively.</p>
 
 <dl class="py method">
 <dt id="psychopy_facade.PsychopyFacade.create_text">
-<code class="sig-name descname">create_text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">col</span><span class="o">=</span><span class="default_value">(255, 255, 255)</span></em>, <em class="sig-param"><span class="n">pos</span><span class="o">=</span><span class="default_value">(0, 0)</span></em>, <em class="sig-param"><span class="n">align_hor</span><span class="o">=</span><span class="default_value">'center'</span></em>, <em class="sig-param"><span class="n">align_vert</span><span class="o">=</span><span class="default_value">'center'</span></em>, <em class="sig-param"><span class="n">wrap_width</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_facade.PsychopyFacade.create_text" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">create_text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">col</span><span class="o">=</span><span class="default_value">(255, 255, 255)</span></em>, <em class="sig-param"><span class="n">pos</span><span class="o">=</span><span class="default_value">(0, 0)</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">align_hor</span><span class="o">=</span><span class="default_value">'center'</span></em>, <em class="sig-param"><span class="n">align_vert</span><span class="o">=</span><span class="default_value">'center'</span></em>, <em class="sig-param"><span class="n">wrap_width</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_facade.PsychopyFacade.create_text" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and returns a psychopy Text object, centered at the passed position</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>text</strong> (<em>string</em>) – The text</p></li>
-<li><p><strong>pos</strong> (<em>(</em><em>float</em><em>, </em><em>float</em><em>)</em>) – Position of the text on the screen, expressed as two fractions relative to window dimensions</p></li>
 <li><p><strong>col</strong> – ((int, int, int)): text color in RGB format</p></li>
+<li><p><strong>pos</strong> (<em>(</em><em>float</em><em>, </em><em>float</em><em>)</em>) – Position of the text on the screen, expressed as two fractions relative to window dimensions</p></li>
+<li><p><strong>size</strong> (<em>int</em>) – Text size</p></li>
 <li><p><strong>align_hor</strong> (<em>string</em>) – Horizontal alignment of the text (‘left’, ‘right’ or ‘center’)</p></li>
 <li><p><strong>align_vert</strong> (<em>string</em>) – Vertical alignment of the text (‘top’, ‘bottom’ or ‘center’)</p></li>
 <li><p><strong>wrap_width</strong> (<em>float</em>) – the maximal horizontal width of the text; it will wrap to a newline at this point</p></li>
@@ -373,7 +375,10 @@ representing the button and its label or icon respectively.</p>
 <dd><p>Sets the text size of the passed text_object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>text_size</strong> (<em>int</em>) – The size of the text.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text_object</strong> (<em>Object</em>) – A reference to the to be changed text object</p></li>
+<li><p><strong>text_size</strong> (<em>int</em>) – The size of the text.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -382,6 +387,12 @@ representing the button and its label or icon respectively.</p>
 <dt id="psychopy_facade.PsychopyFacade.change_button_color">
 <code class="sig-name descname">change_button_color</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shape</span></em>, <em class="sig-param"><span class="n">new_color</span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_facade.PsychopyFacade.change_button_color" title="Permalink to this definition">¶</a></dt>
 <dd><p>Changes the color of the ShapeStim</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="psychopy_facade.PsychopyFacade.set_line_color">
+<code class="sig-name descname">set_line_color</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shape</span></em>, <em class="sig-param"><span class="n">line_color</span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_facade.PsychopyFacade.set_line_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the border color of the specified shape to the provided line_color</p>
 </dd></dl>
 
 <dl class="py method">

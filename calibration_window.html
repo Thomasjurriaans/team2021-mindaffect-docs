@@ -420,7 +420,7 @@ Consists of a number of phases which can be traversed by any key on the physical
 
 <dl class="py method">
 <dt id="windows.calibration_window.CalibrationWindow.draw">
-<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.calibration_window.CalibrationWindow.draw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em>, <em class="sig-param"><span class="n">target_idx</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.calibration_window.CalibrationWindow.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Changes the state of the buttons/keys within the Window.
 It draws the display with the colors given by the Noisetag module if flickering is active.</p>
 <dl class="field-list simple">
@@ -428,6 +428,7 @@ It draws the display with the colors given by the Noisetag module if flickering 
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>noisetag</strong> (<em>noisetag.Noisetag</em>) – Reference to the Noisetag module from MindAffect.</p></li>
 <li><p><strong>last_flip_time</strong> (<em>int</em>) – Timestamp of last screen update, i.e. buffer flip.</p></li>
+<li><p><strong>target_idx</strong> (<em>int</em>) – (Optional) index of the target stimulus.</p></li>
 </ul>
 </dd>
 </dl>
@@ -435,14 +436,13 @@ It draws the display with the colors given by the Noisetag module if flickering 
 
 <dl class="py method">
 <dt id="windows.calibration_window.CalibrationWindow.draw_flicker_frame">
-<code class="sig-name descname">draw_flicker_frame</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em>, <em class="sig-param"><span class="n">target_idx</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.calibration_window.CalibrationWindow.draw_flicker_frame" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw_flicker_frame</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noisetag</span></em>, <em class="sig-param"><span class="n">last_flip_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#windows.calibration_window.CalibrationWindow.draw_flicker_frame" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handles the rendering of the flickering when in calibration phase.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>noisetag</strong> (<em>noisetag.Noisetag</em>) – Reference to the Noisetag module from MindAffect.</p></li>
 <li><p><strong>last_flip_time</strong> (<em>int</em>) – Timestamp of last screen update, i.e. buffer flip.</p></li>
-<li><p><strong>target_idx</strong> (<em>int</em>) – (Optional) index of the target stimulus.</p></li>
 </ul>
 </dd>
 </dl>

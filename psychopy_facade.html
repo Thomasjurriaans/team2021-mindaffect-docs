@@ -167,7 +167,7 @@
 <p>This module contains a single class <code class="docutils literal notranslate"><span class="pre">PsychopyFacade</span></code>.</p>
 <dl class="py class">
 <dt id="psychopy_facade.PsychopyFacade">
-<em class="property">class </em><code class="sig-prename descclassname">psychopy_facade.</code><code class="sig-name descname">PsychopyFacade</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">size</span></em>, <em class="sig-param"><span class="n">full_screen</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_facade.PsychopyFacade" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">psychopy_facade.</code><code class="sig-name descname">PsychopyFacade</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">size</span></em>, <em class="sig-param"><span class="n">wait_blanking</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">full_screen</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_facade.PsychopyFacade" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">keyboard.framework_facade.FrameworkFacade</span></code></p>
 <p>Implements the psychopy functionality into the facade.</p>
 <dl class="field-list simple">
@@ -297,7 +297,7 @@ representing the button and its label or icon respectively.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>size</strong> (<em>float</em>) – The wrap width of the text, as a fraction of the window width</p></li>
+<li><p><strong>size</strong> (<em>(</em><em>float</em><em>, </em><em>float</em><em>)</em>) – The wrap width of the text, as a fraction of the window width</p></li>
 <li><p><strong>pos</strong> (<em>(</em><em>float</em><em>, </em><em>float</em><em>)</em>) – position of the upper left corner of the textfield, as two fractions of the window sizes</p></li>
 <li><p><strong>text_col</strong> (<em>(</em><em>int</em><em>, </em><em>int</em><em>, </em><em>int</em><em>)</em>) – The text color in RGB format</p></li>
 <li><p><strong>text_size</strong> (<em>int</em>) – The size of the text.</p></li>
